@@ -313,6 +313,11 @@
             margin: 0 auto;
         }
 
+        .project-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
         .project-card {
             background: var(--color-card-bg);
             border-radius: var(--radius-lg);
@@ -322,9 +327,16 @@
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .project-card:hover {
+        .project-link:hover .project-card {
             transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-md);
+            border-color: var(--color-accent-teal);
+        }
+
+        .project-link:hover .project-title,
+        .project-link:hover .project-date,
+        .project-link:hover .project-description {
+            color: var(--color-accent-teal);
         }
 
         .project-thumbnail {
@@ -787,34 +799,40 @@
         <h2 class="section-title">My Projects</h2>
         <div class="projects-grid">
             <!-- Time MCP -->
-            <div class="project-card">
-                <div class="project-thumbnail"><img src="https://github.com/DochertyDev/time-mcp/raw/main/images/Time-MCPscreenshot.jpg" alt="Time MCP thumbnail"></div>
-                <div class="project-content">
-                    <h3 class="project-title">Time MCP</h3>
-                    <p class="project-date">Nov 2025</p>
-                    <p class="project-description">A lightweight Model Context Protocol (MCP) server providing real-time date and time functionality for Claude, Gemini CLI, and other MCP-compatible LLM applications. Enables scheduling, timestamping, and automation triggers with seamless context integration.</p>
+            <a href="https://github.com/DochertyDev/time-mcp" class="project-link" target="_blank" rel="noopener noreferrer">
+                <div class="project-card">
+                    <div class="project-thumbnail"><img src="https://github.com/DochertyDev/time-mcp/raw/main/images/Time-MCPscreenshot.jpg" alt="Time MCP thumbnail"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Time MCP</h3>
+                        <p class="project-date">Nov 2025</p>
+                        <p class="project-description">A lightweight Model Context Protocol (MCP) server providing real-time date and time functionality for Claude, Gemini CLI, and other MCP-compatible LLM applications. Enables scheduling, timestamping, and automation triggers with seamless context integration.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
 
             <!-- RedactFlow -->
-            <div class="project-card">
-                <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Redact-Flow/raw/main/images/RedactFlowscreenshot.JPG" alt="RedactFlow thumbnail"></div>
-                <div class="project-content">
-                    <h3 class="project-title">RedactFlow</h3>
-                    <p class="project-date">Oct 2025</p>
-                    <p class="project-description">A privacy-focused local web application that anonymizes sensitive documents using Microsoft Presidio. Replaces PII with secure tokens, allowing safe LLM processing before restoring original data—all without cloud exposure or data risks.</p>
+            <a href="https://github.com/DochertyDev/Redact-Flow" class="project-link" target="_blank" rel="noopener noreferrer">
+                <div class="project-card">
+                    <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Redact-Flow/raw/main/images/RedactFlowscreenshot.JPG" alt="RedactFlow thumbnail"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">RedactFlow</h3>
+                        <p class="project-date">Oct 2025</p>
+                        <p class="project-description">A privacy-focused local web application that anonymizes sensitive documents using Microsoft Presidio. Replaces PII with secure tokens, allowing safe LLM processing before restoring original data—all without cloud exposure or data risks.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Salesforce Barcode Scanner -->
-            <div class="project-card">
-                <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Salesforce-CRM-Analytics/raw/main/images/SalesforceBarcodeScannerscreenshot.jpg" alt="Salesforce Barcode Scanner thumbnail"></div>
-                <div class="project-content">
-                    <h3 class="project-title">Salesforce Barcode Scanner</h3>
-                    <p class="project-date">Aug-Sep 2025</p>
-                    <p class="project-description">Mobile-optimized Lightning Web Component enabling seamless barcode scanning within Salesforce. Streamlines inventory management and field operations with native camera integration and real-time data capture.</p>
+            <a href="https://github.com/DochertyDev/Salesforce-CRM-Analytics" class="project-link" target="_blank" rel="noopener noreferrer">
+                <div class="project-card">
+                    <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Salesforce-CRM-Analytics/raw/main/images/SalesforceBarcodeScannerscreenshot.jpg" alt="Salesforce Barcode Scanner thumbnail"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Salesforce Barcode Scanner</h3>
+                        <p class="project-date">Aug-Sep 2025</p>
+                        <p class="project-description">Mobile-optimized Lightning Web Component enabling seamless barcode scanning within Salesforce. Streamlines inventory management and field operations with native camera integration and real-time data capture.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -995,10 +1013,25 @@
 
     <script>
         // ========== SMOOTH SCROLL WITH OFFSET ==========
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+
+                const href = this.getAttribute('href');
+
+                // Allow normal behavior for external links or placeholder links
+                if (href === '#' || this.target === '_blank') {
+                    // For project links, let the default behavior (opening a new tab) happen
+                    if (this.classList.contains('project-link')) {
+                        return;
+                    }
+                    // For other placeholder links, do nothing
+                    if (href === '#') {
+                        return;
+                    }
+                }
+
+                const target = document.querySelector(href);
                 if (target) {
                     window.scrollTo({
                         top: target.offsetTop,
