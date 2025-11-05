@@ -551,22 +551,25 @@
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: var(--shadow-sm);
+            color: var(--color-text-primary);
         }
 
         .link-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-md);
             border-color: var(--color-accent-teal);
+            color: var(--color-accent-teal);
         }
 
-        .link-icon {
-            font-size: 2.5rem;
+        .link-card svg {
+            width: 2.5rem;
+            height: 2.5rem;
             margin-bottom: var(--spacing-sm);
+            stroke-width: 1.5;
         }
 
         .link-name {
             font-weight: 600;
-            color: var(--color-text-primary);
             font-size: 1rem;
         }
 
@@ -950,28 +953,26 @@
         <h2 class="section-title">Other Work</h2>
         <div class="linktree-grid">
             <!-- LinkedIn -->
-            <!-- TODO: Update href with your actual profile URLs -->
             <a href="https://www.linkedin.com/in/sean-docherty-901360239/" class="link-card" target="_blank" rel="noopener noreferrer">
-                <div class="link-icon">💼</div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 <span class="link-name">LinkedIn</span>
             </a>
 
             <!-- GitHub -->
             <a href="https://github.com/DochertyDev" class="link-card" target="_blank" rel="noopener noreferrer">
-                <div class="link-icon">💻</div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 <span class="link-name">GitHub</span>
             </a>
 
             <!-- Trailblazer (Salesforce) -->
-            <!-- TODO: Add your Trailblazer profile URL -->
             <a href="https://www.salesforce.com/trailblazer/smdocherty" class="link-card" target="_blank" rel="noopener noreferrer">
-                <div class="link-icon">☁️</div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
                 <span class="link-name">Trailblazer</span>
             </a>
 
             <!-- YouTube -->
             <a href="https://www.youtube.com/@DochertyDev" class="link-card" target="_blank" rel="noopener noreferrer">
-                <div class="link-icon">📺</div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
                 <span class="link-name">YouTube</span>
             </a>
         </div>
