@@ -331,19 +331,24 @@
             width: 100%;
             height: 180px;
             background: linear-gradient(135deg, rgba(217, 119, 87, 0.1) 0%, rgba(229, 144, 112, 0.15) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--color-accent-teal);
             border-bottom: 1px solid var(--color-border);
+            /* Styles for image */
+            background-size: cover;
+            background-position: center;
+            /* The following styles are removed as img tag will be used */
+            /* display: flex; */
+            /* align-items: center; */
+            /* justify-content: center; */
+            /* font-size: 3rem; */
+            /* color: var(--color-accent-teal); */
         }
 
-        /* TODO: To add your own project images, replace the .project-thumbnail background with:
-           background-image: url('your-image-url.jpg');
-           background-size: cover;
-           background-position: center;
-           And remove the flex/alignment styles */
+        .project-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            display: block; /* Remove extra space below image */
+        }
 
         .project-content {
             padding: var(--spacing-md);
@@ -783,7 +788,7 @@
         <div class="projects-grid">
             <!-- Time MCP -->
             <div class="project-card">
-                <div class="project-thumbnail">🕐</div>
+                <div class="project-thumbnail"><img src="https://github.com/DochertyDev/time-mcp/raw/main/images/Time-MCPscreenshot.jpg" alt="Time MCP thumbnail"></div>
                 <div class="project-content">
                     <h3 class="project-title">Time MCP</h3>
                     <p class="project-date">Nov 2025</p>
@@ -793,7 +798,7 @@
 
             <!-- RedactFlow -->
             <div class="project-card">
-                <div class="project-thumbnail">🔒</div>
+                <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Redact-Flow/raw/main/images/RedactFlowscreenshot.JPG" alt="RedactFlow thumbnail"></div>
                 <div class="project-content">
                     <h3 class="project-title">RedactFlow</h3>
                     <p class="project-date">Oct 2025</p>
@@ -803,7 +808,7 @@
 
             <!-- Salesforce Barcode Scanner -->
             <div class="project-card">
-                <div class="project-thumbnail">📱</div>
+                <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Salesforce-CRM-Analytics/raw/main/images/SalesforceBarcodeScannerscreenshot.jpg" alt="Salesforce Barcode Scanner thumbnail"></div>
                 <div class="project-content">
                     <h3 class="project-title">Salesforce Barcode Scanner</h3>
                     <p class="project-date">Aug-Sep 2025</p>
