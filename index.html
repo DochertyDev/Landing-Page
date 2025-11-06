@@ -380,6 +380,15 @@
             font-weight: 600;
             color: var(--color-text-primary);
             margin-bottom: var(--spacing-xs);
+            white-space: nowrap; /* Truncate long project names */
+            overflow: hidden; /* Hide overflowing text */
+            text-overflow: ellipsis; /* Add ellipsis for truncated text */
+        }
+
+        .project-title.expanded {
+            white-space: normal;
+            overflow: visible;
+            text-overflow: clip;
         }
 
         .project-date {
@@ -837,7 +846,7 @@
 
     <!-- ========== PROJECT SHOWCASE ========== -->
     <section class="section" id="projects">
-        <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title">My Personal Projects</h2>
         <div class="projects-grid">
             <!-- Time MCP -->
             <a href="https://github.com/DochertyDev/time-mcp" class="project-link" target="_blank" rel="noopener noreferrer">
@@ -1065,7 +1074,7 @@
             </a>
 
             <!-- GitHub -->
-            <a href="https://github.com/DochertyDev" class="link-card" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/DochertyDev/" class="link-card" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 <span class="link-name">GitHub</span>
             </a>
@@ -1154,8 +1163,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 e.stopPropagation(); // Prevent the project-link from navigating
 
                 const description = this.previousElementSibling; // The project-description paragraph
+                const projectContent = this.closest('.project-content'); // Get the parent project-content
+                const title = projectContent ? projectContent.querySelector('.project-title') : null; // Find the project-title
+
                 if (description) {
                     description.classList.toggle('expanded');
+                    if (title) { // Toggle expanded class on title if found
+                        title.classList.toggle('expanded');
+                    }
+
                     if (description.classList.contains('expanded')) {
                         this.textContent = 'Show Less';
                     } else {
