@@ -1,4 +1,4 @@
-# Personal Portfolio Landing Page
+# ![favicon](images/favicon-32x32.png) Personal Portfolio Landing Page
 
 This repository contains the source code for my personal portfolio landing page.
 
