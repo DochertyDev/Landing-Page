@@ -4,13 +4,13 @@
   </a>
 </p>
 
+<div align="center">Click the icon above to access the page!</div>
+
 <h1 align="center">
 Landing-Page
 </h1>
 
 <h2 align="center">This repository contains the source code for my personal portfolio landing page.</h2>
-
-<div align="center">Click the icon above to access the page!</div>
 
 <br />
 
