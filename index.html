@@ -3,61 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sean Docherty | About Me</title>
+    <title>About Me</title>
 
-<link rel="apple-touch-icon" sizes="180x180" href="https://github.com/DochertyDev/Landing-Page/blob/main/images/apple-touch-icon.png?raw=true">
-<link rel="icon" type="image/png" sizes="32x32" href="https://github.com/DochertyDev/Landing-Page/blob/main/images/favicon-32x32.png?raw=true">
-<link rel="icon" type="image/png" sizes="16x16" href="https://github.com/DochertyDev/Landing-Page/blob/main/images/favicon-16x16.png?raw=true">
-<link rel="manifest" href="https://github.com/DochertyDev/Landing-Page/blob/main/images/site.webmanifest?raw=true">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/DochertyDev/Landing-Page/blob/main/images/apple-touch-icon.png?raw=true">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://github.com/DochertyDev/Landing-Page/blob/main/images/favicon-32x32.png?raw=true">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://github.com/DochertyDev/Landing-Page/blob/main/images/favicon-16x16.png?raw=true">
+    <link rel="manifest" href="https://github.com/DochertyDev/Landing-Page/blob/main/images/site.webmanifest?raw=true">
+    
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         /* ========== CSS VARIABLES & DESIGN SYSTEM ========== */
         :root {
-            /* Primary Color Palette - Inspired by Perplexity Design System */
-            --color-bg-primary: #FCFCF9;
-            --color-bg-secondary: #FFFFFE;
-            --color-text-primary: #13343B;
-            --color-text-secondary: #626C71;
-            --color-accent-teal: #d97757;
-            --color-accent-teal-light: #e59070;
-            --color-accent-brown: #5E5240;
-            --color-border: rgba(94, 82, 64, 0.2);
-            --color-card-bg: #FFFFFF;
-            
-            /* Typography */
-            --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
-            
-            /* Spacing */
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2rem;
-            --spacing-xl: 3rem;
-            --spacing-2xl: 4rem;
-            
-            /* Border Radius */
-            --radius-sm: 6px;
-            --radius-md: 10px;
-            --radius-lg: 14px;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
-        }
-
-        /* ========== DARK MODE ========== */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --color-bg-primary: #1F2121;
-                --color-bg-secondary: #262828;
-                --color-text-primary: #F5F5F5;
-                --color-accent-teal: #e59070;
-                --color-accent-teal-light: #eaa689;
-                --color-border: rgba(119, 124, 124, 0.3);
-                --color-card-bg: #262828;
-            }
+            --color-bg-primary: #18191A;            /* deep techy charcoal background */
+            --color-bg-accent: #212223;             /* accent: slightly lighter for cards/sections */
+            --color-text-primary: #ECECEC;           /* high contrast, soft white */
+            --color-accent-main: #40A8F5;           /* highlight/call-to-action */
+            --color-accent-secondary: #ffffff;      /* secondary accent, for ligatures/tags */
+            --font-primary: 'JetBrains Mono', 'Fira Mono', monospace;
+            --border-radius-global: 8px;             /* subtle curve, matches JB Mono’s cards/buttons */
+            --shadow-main: 0 2px 16px #0005;        /* smooth shadow for cards/modal depth */
+            --spacing-lg: 2.5rem;                   /* section gap */
+            --spacing-md: 1.25rem;
+            --spacing-sm: 0.5rem;
         }
 
         /* ========== BASE STYLES ========== */
@@ -88,44 +56,33 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #d97757 0%, #e08862 50%, #e59070 100%);
+            background: linear-gradient(180deg, var(--color-bg-primary) 0%, #212223 100%);
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
-            pointer-events: none;
+            text-align: center;
         }
 
         .hero-content {
             position: relative;
             z-index: 10;
-            text-align: center;
             padding: var(--spacing-lg);
             max-width: 900px;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(3rem, 8vw, 5.5rem);
             font-weight: 700;
-            color: white;
+            color: var(--color-text-primary);
             margin-bottom: var(--spacing-sm);
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
             line-height: 1.1;
         }
 
         .hero-headline {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: var(--spacing-xl);
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--color-text-primary);
+            opacity: 0.8;
+            margin-bottom: var(--spacing-lg);
             font-weight: 400;
             max-width: 700px;
             margin-left: auto;
@@ -135,51 +92,51 @@
 
         .hero-cta {
             display: flex;
-            gap: var(--spacing-sm);
+            gap: var(--spacing-md);
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 0.875rem 2rem;
-            border-radius: var(--radius-md);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 999px; /* Pill shape */
             font-size: 1rem;
-            font-weight: 550;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
             cursor: pointer;
-            border: none;
+            border: 1px solid transparent;
             text-align: center;
         }
 
         .btn-primary {
-            background: white;
-            color: var(--color-accent-teal);
-            box-shadow: var(--shadow-md);
+            background: var(--color-accent-main);
+            color: var(--color-bg-primary);
+            box-shadow: var(--shadow-main);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 4px 20px #0008;
+            background: var(--color-accent-secondary);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            background: transparent;
+            color: var(--color-accent-main);
+            border: 1px solid var(--color-accent-main);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(64, 168, 245, 0.1);
+            transform: translateY(-2px);
         }
 
         /* ========== SECTION STYLES ========== */
         .section {
-            padding: var(--spacing-2xl) var(--spacing-lg);
+            padding: var(--spacing-lg) var(--spacing-md);
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -197,116 +154,104 @@
         .about-content {
             max-width: 800px;
             margin: 0 auto;
-            font-size: 1.125rem;
+            font-size: 1.1rem;
             line-height: 1.8;
-            color: var(--color-text-secondary);
+            color: var(--color-text-primary);
+            opacity: 0.9;
+            text-align: left;
         }
-
+        
         .about-content p {
             margin-bottom: var(--spacing-md);
         }
 
-        .about-content p:first-of-type::first-letter {
-            font-size: 3.5rem;
+        .about-content strong {
             font-weight: 700;
-            line-height: 1;
-            float: left;
-            margin-right: 0.5rem;
-            color: var(--color-accent-teal);
+            color: var(--color-accent-secondary);
         }
 
-        /* ========== EXPERIENCE SECTION ========== */
+        /* ========== EXPERIENCE SECTION (TIMELINE) ========== */
         .timeline {
             position: relative;
             max-width: 900px;
             margin: 0 auto;
+            padding-left: var(--spacing-md);
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 20px;
+            left: 0;
             top: 0;
             bottom: 0;
             width: 2px;
-            background: var(--color-border);
+            background: var(--color-accent-main);
         }
 
         .timeline-item {
             position: relative;
-            padding-left: 60px;
-            margin-bottom: var(--spacing-xl);
+            padding-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
         }
 
         .timeline-marker {
             position: absolute;
-            left: 12px;
+            left: -9px; /* Adjust to center on the line */
             top: 6px;
             width: 18px;
             height: 18px;
             border-radius: 50%;
-            background: var(--color-accent-teal);
+            background: var(--color-accent-main);
             border: 3px solid var(--color-bg-primary);
-            box-shadow: var(--shadow-sm);
         }
 
         .timeline-content {
-            background: var(--color-card-bg);
-            border-radius: var(--radius-lg);
+            background: var(--color-bg-accent);
+            border-radius: var(--border-radius-global);
             padding: var(--spacing-md);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--color-border);
-        }
-
-        .timeline-header {
-            margin-bottom: var(--spacing-sm);
+            box-shadow: var(--shadow-main);
+            border: 1px solid transparent;
         }
 
         .timeline-title {
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--color-text-primary);
-            margin-bottom: 0.25rem;
+            margin-bottom: var(--spacing-sm);
         }
 
         .timeline-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-xs);
             font-size: 0.9rem;
-            color: var(--color-text-secondary);
-            margin-bottom: var(--spacing-xs);
+            color: var(--color-text-primary);
+            opacity: 0.7;
+            margin-bottom: var(--spacing-sm);
         }
 
         .timeline-company {
-            font-weight: 550;
-            color: var(--color-accent-teal);
-        }
-
-        .timeline-date {
-            color: var(--color-text-secondary);
+            font-weight: 700;
+            color: var(--color-accent-main);
         }
 
         .timeline-description {
             list-style: none;
             padding: 0;
+            font-size: 0.95rem;
+            color: var(--color-text-primary);
+            opacity: 0.8;
         }
 
         .timeline-description li {
             position: relative;
             padding-left: 1.5rem;
-            margin-bottom: var(--spacing-xs);
-            color: var(--color-text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
         }
 
         .timeline-description li::before {
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--color-accent-teal);
-            font-weight: 600;
+            color: var(--color-accent-secondary);
+            font-weight: 700;
         }
 
         /* ========== PROJECT SHOWCASE ========== */
@@ -314,83 +259,58 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: var(--spacing-lg);
-            align-items: start; /* Prevent cards from stretching to match tallest sibling */
-            max-width: 1100px;
-            margin: 0 auto;
         }
 
         .project-link {
             text-decoration: none;
             color: inherit;
-            display: flex; /* Make the link fill the grid cell */
         }
 
         .project-card {
-            background: var(--color-card-bg);
-            border-radius: var(--radius-lg);
+            background: var(--color-bg-accent);
+            border-radius: var(--border-radius-global);
             overflow: hidden;
-            border: 1px solid var(--color-border);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex; /* Phase 1 & 2: Internal Flexbox for content distribution */
+            box-shadow: var(--shadow-main);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            display: flex;
             flex-direction: column;
-            min-height: 350px; /* Ensure consistent initial height */
-            /* height: 100%; Make card fill the height of its grid cell */
+            height: 100%;
         }
 
         .project-link:hover .project-card {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--color-accent-teal);
-        }
-
-        .project-link:hover .project-title,
-        .project-link:hover .project-date,
-        .project-link:hover .project-description {
-            color: var(--color-accent-teal);
+            transform: scale(1.03);
+            border-color: var(--color-accent-main);
         }
 
         .project-thumbnail {
             width: 100%;
             height: 180px;
-            background: linear-gradient(135deg, rgba(217, 119, 87, 0.1) 0%, rgba(229, 144, 112, 0.15) 100%);
-            border-bottom: 1px solid var(--color-border);
-            /* Styles for image */
-            background-size: cover;
-            background-position: center;
-            /* The following styles are removed as img tag will be used */
-            /* display: flex; */
-            /* align-items: center; */
-            /* justify-content: center; */
-            /* font-size: 3rem; */
-            /* color: var(--color-accent-teal); */
+            background-color: var(--color-bg-primary);
         }
 
         .project-thumbnail img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the image covers the area without distortion */
-            display: block; /* Remove extra space below image */
+            object-fit: cover;
+            border-radius: var(--border-radius-global) var(--border-radius-global) 0 0;
         }
 
         .project-content {
             padding: var(--spacing-md);
-            flex-grow: 1; /* Phase 2: Make content take available space and push description down */
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
         .project-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
             font-size: 1.25rem;
-            font-weight: 600;
             color: var(--color-text-primary);
-            margin-bottom: var(--spacing-xs);
-            white-space: nowrap; /* Truncate long project names */
-            overflow: hidden; /* Hide overflowing text */
-            text-overflow: ellipsis; /* Add ellipsis for truncated text */
+            margin-bottom: var(--spacing-sm);
         }
-
+        
         .project-title.expanded {
             white-space: normal;
             overflow: visible;
@@ -399,14 +319,17 @@
 
         .project-date {
             font-size: 0.85rem;
-            color: var(--color-text-secondary);
+            color: var(--color-text-primary);
+            opacity: 0.7;
             margin-bottom: var(--spacing-sm);
         }
 
         .project-description {
             font-size: 0.95rem;
-            color: var(--color-text-secondary);
+            color: var(--color-text-primary);
+            opacity: 0.8;
             line-height: 1.6;
+            flex-grow: 1;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
@@ -427,18 +350,18 @@
         .read-more-btn {
             background: none;
             border: none;
-            color: var(--color-accent-teal);
+            color: var(--color-accent-main);
             font-size: 0.9rem;
-            font-weight: 550;
+            font-weight: 700;
             cursor: pointer;
             padding: 0;
-            margin-top: var(--spacing-xs);
-            align-self: flex-start; /* Align button to the start */
+            margin-top: var(--spacing-sm);
+            align-self: flex-start;
             transition: color 0.2s ease;
         }
 
         .read-more-btn:hover {
-            color: var(--color-accent-teal-light);
+            color: var(--color-accent-secondary);
             text-decoration: underline;
         }
 
@@ -449,7 +372,7 @@
         }
 
         .skills-section {
-            margin-bottom: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
         }
 
         .skills-category {
@@ -458,46 +381,41 @@
 
         .category-title {
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--color-text-primary);
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
             display: flex;
             align-items: center;
-            gap: var(--spacing-xs);
+            gap: var(--spacing-sm);
+            justify-content: flex-start;
         }
 
         .category-title::before {
             content: '';
             width: 4px;
             height: 24px;
-            background: var(--color-accent-teal);
+            background: var(--color-accent-main);
             border-radius: 2px;
         }
 
         .skills-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: var(--spacing-xs);
+            gap: var(--spacing-sm);
+            justify-content: flex-start;
         }
 
         .skill-tag {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: rgba(217, 119, 87, 0.08);
-            color: var(--color-accent-teal);
-            border-radius: var(--radius-md);
+            background: var(--color-bg-accent);
+            color: var(--color-accent-secondary);
+            font-family: 'JetBrains Mono', monospace;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 999px; /* Pill shape */
             font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid rgba(217, 119, 87, 0.15);
-            transition: all 0.2s ease;
+            font-weight: 400;
+            border: 1px solid var(--color-accent-secondary);
         }
-
-        .skill-tag:hover {
-            background: rgba(217, 119, 87, 0.12);
-            border-color: rgba(217, 119, 87, 0.3);
-            transform: translateY(-1px);
-        }
-
+        
         .certifications-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -506,41 +424,29 @@
         }
 
         .cert-card {
-            background: var(--color-card-bg);
-            border-radius: var(--radius-lg);
+            background: var(--color-bg-accent);
+            border-radius: var(--border-radius-global);
             padding: var(--spacing-md);
-            border: 1px solid var(--color-border);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-        }
-
-        .cert-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-main);
+            text-align: left;
         }
 
         .cert-title {
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--color-text-primary);
-            margin-bottom: var(--spacing-xs);
+            margin-bottom: var(--spacing-sm);
         }
         .cert-issuer {
             font-size: 0.9rem;
-            color: var(--color-accent-teal);
-            margin-bottom: var(--spacing-xs);
+            color: var(--color-accent-main);
+            margin-bottom: var(--spacing-sm);
         }
 
         .cert-date {
             font-size: 0.85rem;
-            color: var(--color-text-secondary);
-        }
-
-        .cert-id {
-            font-size: 0.8rem;
-            color: var(--color-text-secondary);
-            font-family: var(--font-mono);
-            margin-top: var(--spacing-xs);
+            color: var(--color-text-primary);
+            opacity: 0.7;
         }
 
         /* ========== TESTIMONIALS ========== */
@@ -548,60 +454,75 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: var(--spacing-lg);
-            max-width: 1100px;
-            margin: 0 auto;
         }
 
         .testimonial-card {
-            background: var(--color-card-bg);
-            border-radius: var(--radius-lg);
+            background: var(--color-bg-accent);
+            border-radius: var(--border-radius-global);
             padding: var(--spacing-lg);
-            border: 1px solid var(--color-border);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-main);
             position: relative;
         }
 
         .testimonial-quote {
-            font-size: 2.5rem;
-            color: var(--color-accent-teal);
-            opacity: 0.2;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 4rem;
+            color: var(--color-accent-main);
+            opacity: 0.3;
             position: absolute;
-            top: 1rem;
-            left: 1rem;
+            top: var(--spacing-md);
+            left: var(--spacing-md);
             line-height: 1;
         }
 
         .testimonial-text {
-            font-size: 0.95rem;
+            font-size: 1rem;
             line-height: 1.7;
-            color: var(--color-text-secondary);
+            color: var(--color-text-primary);
+            opacity: 0.9;
             margin-bottom: var(--spacing-md);
             position: relative;
             z-index: 1;
+            font-style: italic;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; /* Limit to 4 lines */
+            line-clamp: 4;
+            -webkit-box-orient: vertical;
+            max-height: 6.8em; /* 4 lines * 1.7 line-height */
+            transition: max-height 0.3s ease-out;
+        }
+
+        .testimonial-text.expanded {
+            max-height: 1000px; /* Sufficiently large to show full content */
+            -webkit-line-clamp: unset;
+            line-clamp: unset;
+            overflow: visible;
         }
 
         .testimonial-author {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
+            text-align: left;
         }
 
         .testimonial-name {
-            font-weight: 600;
-            color: var(--color-accent-teal);
+            font-weight: 700;
+            color: var(--color-accent-main);
             font-size: 1rem;
         }
 
         .testimonial-title {
             font-size: 0.85rem;
-            color: var(--color-text-secondary);
+            color: var(--color-text-primary);
+            opacity: 0.7;
+            font-style: italic;
         }
 
         /* ========== LINK TREE ========== */
         .linktree {
-            background: var(--color-bg-secondary);
-            border-top: 1px solid var(--color-border);
-            border-bottom: 1px solid var(--color-border);
+            background: var(--color-bg-accent);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
         }
 
         .linktree-grid {
@@ -618,20 +539,20 @@
             align-items: center;
             justify-content: center;
             padding: var(--spacing-lg);
-            background: var(--color-card-bg);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--color-border);
+            background: var(--color-bg-primary);
+            border-radius: var(--border-radius-global);
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-main);
             color: var(--color-text-primary);
+            border: 1px solid transparent;
         }
 
         .link-card:hover {
             transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--color-accent-teal);
-            color: var(--color-accent-teal);
+            box-shadow: 0 4px 20px #0008;
+            border-color: var(--color-accent-main);
+            color: var(--color-accent-main);
         }
 
         .link-card svg {
@@ -642,19 +563,19 @@
         }
 
         .link-name {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1rem;
         }
-
+        
         /* ========== CONTACT SECTION ========== */
         .contact {
-            background: linear-gradient(135deg, rgba(217, 119, 87, 0.05) 0%, rgba(229, 144, 112, 0.08) 100%);
             text-align: center;
         }
 
         .contact-subtitle {
             font-size: 1.125rem;
-            color: var(--color-text-secondary);
+            color: var(--color-text-primary);
+            opacity: 0.8;
             margin-bottom: var(--spacing-lg);
             max-width: 600px;
             margin-left: auto;
@@ -664,22 +585,38 @@
         .contact-email {
             display: inline-flex;
             align-items: center;
-            gap: var(--spacing-xs);
-            padding: 1rem 2rem;
-            background: var(--color-accent-teal);
-            color: white;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md) var(--spacing-lg);
+            background: var(--color-accent-main);
+            color: var(--color-bg-primary);
             text-decoration: none;
-            border-radius: var(--radius-md);
+            border-radius: 999px;
             font-size: 1.125rem;
-            font-weight: 550;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: var(--shadow-md);
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-main);
         }
 
         .contact-email:hover {
-            background: var(--color-accent-teal-light);
+            background: var(--color-accent-secondary);
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 4px 20px #0008;
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-in {
+            animation: fadein 0.7s ease-out;
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
         }
 
         /* ========== RESPONSIVE ========== */
@@ -689,25 +626,12 @@
             }
 
             .section {
-                padding: var(--spacing-xl) var(--spacing-md);
+                padding: var(--spacing-lg) var(--spacing-md);
             }
-
-            .timeline::before {
-                left: 10px;
-            }
-
-            .timeline-item {
-                padding-left: 40px;
-            }
-
-            .timeline-marker {
-                left: 4px;
-                width: 14px;
-                height: 14px;
-            }
-
+            
             .hero-cta {
                 flex-direction: column;
+                align-items: center;
             }
 
             .btn {
@@ -722,29 +646,12 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        /* ========== SCROLL ANIMATIONS ========== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
     </style>
 </head>
 <body>
     <!-- ========== HERO SECTION ========== -->
     <section class="hero" id="hero">
-        <div class="hero-content">
+        <div class="hero-content fade-in">
             <h1>Sean Docherty</h1>
             <p class="hero-headline">Transforming business challenges into intelligent solutions through Salesforce, AI enablement, and strategic consulting</p>
             <div class="hero-cta">
@@ -762,12 +669,9 @@
     <section class="section" id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
-            <p>I believe technology should empower, not complicate. My journey into Salesforce, AI solutions, and technology all started with curiosity and questions. "How does it work?", "What does it do?", and "Who does it benefit?". These are questions I have been asking myself nearly my entire life, constantly replacing the "it" with new variables.</p>
-            
-            <p>Over the past three years of consulting, I've evolved from learning the ropes as an Associate to leading client engagements as a Solutions Consultant. My passion lies in bridging the gap between technical possibilities and business realities, translating ideas into working solutions that drive real value.</p>
-            
+            <p>I believe technology should empower, not complicate. My journey into <strong>Salesforce, AI solutions, and technology</strong> all started with curiosity and questions. "How does it work?", "What does it do?", and "Who does it benefit?". These are questions I have been asking myself nearly my entire life, constantly replacing the "it" with new variables.</p>
+            <p>Over the past three years of consulting, I've evolved from learning the ropes as an Associate to leading client engagements as a <strong>Solutions Consultant</strong>. My passion lies in bridging the gap between technical possibilities and business realities, translating ideas into working solutions that drive real value.</p>
             <p>What drives me most is staying on top of the fast-moving tech landscape, researching emerging tools and frameworks, applying them, and simplifying the concepts for unfamiliar audiences. The moment a client sees their vision come to life in a demo, or when a custom dashboard reveals insights they never knew existed. I thrive on continuous learning, whether it's mastering the latest Salesforce AI capabilities like Agentforce, building privacy-focused tools like my personal RedactFlow project, or exploring cutting-edge technologies like Model Context Protocol.</p>
-            
             <p>When I'm not thinking about solutions or configuring Salesforce environments, you'll find me experimenting with new AI frameworks, working on open-source projects, or helping others understand how intelligent automation can transform their workflows.</p>
         </div>
     </section>
@@ -780,16 +684,9 @@
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-header">
-                        <h3 class="timeline-title">Solutions Consultant</h3>
-                        <div class="timeline-meta">
-                            <span class="timeline-company">Diabsolut</span>
-                            <span>•</span>
-                            <span class="timeline-date">Feb 2023 - Jul 2025 · 2 yrs 6 mos</span>
-                        </div>
-                        <div class="timeline-meta">
-                            <span>📍 Remote</span>
-                        </div>
+                    <h3 class="timeline-title">Solutions Consultant</h3>
+                    <div class="timeline-meta">
+                        <span class="timeline-company">Diabsolut</span> • Remote • <span class="timeline-date">Feb 2023 - Jul 2025</span>
                     </div>
                     <ul class="timeline-description">
                         <li>Led discovery calls, product demonstrations, and scoping sessions for client opportunities, translating complex business requirements into actionable solutions</li>
@@ -805,16 +702,9 @@
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-header">
-                        <h3 class="timeline-title">Associate Solutions Consultant</h3>
-                        <div class="timeline-meta">
-                            <span class="timeline-company">Diabsolut</span>
-                            <span>•</span>
-                            <span class="timeline-date">Jul 2022 - Feb 2023 · 8 mos</span>
-                        </div>
-                        <div class="timeline-meta">
-                            <span>📍 Remote</span>
-                        </div>
+                    <h3 class="timeline-title">Associate Solutions Consultant</h3>
+                    <div class="timeline-meta">
+                        <span class="timeline-company">Diabsolut</span> • Remote • <span class="timeline-date">Jul 2022 - Feb 2023</span>
                     </div>
                     <ul class="timeline-description">
                         <li>Consulted with clients during pre-sales cycles to determine optimal tooling and implementation strategies tailored to their unique needs</li>
@@ -829,16 +719,9 @@
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-header">
-                        <h3 class="timeline-title">IT Knowledge Intern (Contract)</h3>
-                        <div class="timeline-meta">
-                            <span class="timeline-company">UPS</span>
-                            <span>•</span>
-                            <span class="timeline-date">Aug 2021 - Dec 2021 · 5 mos</span>
-                        </div>
-                        <div class="timeline-meta">
-                            <span>📍 Moncton, New Brunswick, Canada · On-site</span>
-                        </div>
+                    <h3 class="timeline-title">IT Knowledge Intern</h3>
+                    <div class="timeline-meta">
+                        <span class="timeline-company">UPS</span> • Moncton, NB • <span class="timeline-date">Aug 2021 - Dec 2021</span>
                     </div>
                     <ul class="timeline-description">
                         <li>Supported enterprise-wide system migration from legacy Document Management System to modern Salesforce Knowledge platform</li>
@@ -937,6 +820,35 @@
     <section class="section" id="expertise">
         <h2 class="section-title">My Expertise</h2>
         <div class="expertise-container">
+                        <!-- Certifications Section -->
+            <h3 class="category-title" style="margin-top: var(--spacing-lg);">Certifications</h3>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <h4 class="cert-title">Salesforce Certified Agentforce Specialist</h4>
+                    <p class="cert-issuer">Salesforce</p>
+                    <p class="cert-date">Issued Aug 2025</p>
+                </div>
+
+                <div class="cert-card">
+                    <h4 class="cert-title">PSA Sysadmin Certification</h4>
+                    <p class="cert-issuer">Certinia</p>
+                    <p class="cert-date">Issued Nov 2023</p>
+                </div>
+
+                <div class="cert-card">
+                    <h4 class="cert-title">Salesforce Certified Administrator (SCA)</h4>
+                    <p class="cert-issuer">Salesforce</p>
+                    <p class="cert-date">Issued Sep 2022</p>
+                </div>
+
+                <div class="cert-card">
+                    <h4 class="cert-title">Salesforce AI Associate</h4>
+                    <p class="cert-issuer">Salesforce</p>
+                    <p class="cert-date">Issued Oct 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
             <!-- Skills Section -->
             <div class="skills-section">
                 <div class="skills-category">
@@ -1031,61 +943,20 @@
                 </div>
             </div>
 
-            <!-- Certifications Section -->
-            <h3 class="category-title" style="margin-top: var(--spacing-xl);">Certifications</h3>
-            <div class="certifications-grid">
-                <div class="cert-card">
-                    <h4 class="cert-title">Salesforce Certified Agentforce Specialist</h4>
-                    <p class="cert-issuer">Salesforce</p>
-                    <p class="cert-date">Issued Aug 2025</p>
-                </div>
-
-                <div class="cert-card">
-                    <h4 class="cert-title">PSA Sysadmin Certification</h4>
-                    <p class="cert-issuer">Certinia</p>
-                    <p class="cert-date">Issued Nov 2023</p>
-                </div>
-
-                <div class="cert-card">
-                    <h4 class="cert-title">Salesforce Certified Administrator (SCA)</h4>
-                    <p class="cert-issuer">Salesforce</p>
-                    <p class="cert-date">Issued Sep 2022</p>
-                </div>
-
-                <div class="cert-card">
-                    <h4 class="cert-title">Salesforce AI Associate</h4>
-                    <p class="cert-issuer">Salesforce</p>
-                    <p class="cert-date">Issued Oct 2023</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ========== TESTIMONIALS ========== -->
     <section class="section" id="testimonials">
-        <h2 class="section-title">What My Colleagues Are Saying</h2>
+        <h2 class="section-title">Testimonials</h2>
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="testimonial-quote">"</div>
-                <p class="testimonial-text">It's been an absolute pleasure collaborating with Sean for nearly two years here at Diabsolut. When he first joined as an associate solutions consultant in the presales department, he dove in headfirst despite having limited familiarity with the products and solutions he was tasked with supporting. However, Sean quickly proved his mettle by swiftly mastering the intricacies of our offerings, adeptly conducting demos, engaging with clients, and cultivating the confidence necessary to excel in his role.</p>
-                <div class="testimonial-author">
-                    <span class="testimonial-name">Essam Nessim</span>
-                    <span class="testimonial-title">Associate Partner at IBM | Former Manager at Diabsolut</span>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-quote">"</div>
-                <p class="testimonial-text">One of Sean's standout qualities is his remarkable ability to distill complex concepts into easily understandable insights for both internal colleagues and external stakeholders. His talent for showcasing the value of our software while effortlessly navigating through intricate inquiries is truly commendable and adds immense value to our team.</p>
-                <div class="testimonial-author">
-                    <span class="testimonial-name">Essam Nessim</span>
-                    <span class="testimonial-title">Associate Partner at IBM | Former Manager at Diabsolut</span>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-quote">"</div>
-                <p class="testimonial-text">Sean has become an indispensable resource to our department, and we heavily rely on his expertise to drive our initiatives forward. His dedication and hard work have rightfully earned him a promotion to solution consultant, demonstrating his unwavering drive, impeccable skills, and admirable demeanour that are pivotal to his continued success. What truly sets Sean apart is his insatiable thirst for knowledge and his seamless integration of newfound expertise into practical applications.</p>
+                <p class="testimonial-text">It's been an absolute pleasure collaborating with Sean for nearly two years here at Diabsolut. When he first joined as an associate solutions consultant in the presales department, he dove in headfirst despite having limited familiarity with the products and solutions he was tasked with supporting. However, Sean quickly proved his mettle by swiftly mastering the intricacies of our offerings, adeptly conducting demos, engaging with clients, and cultivating the confidence necessary to excel in his role.
+                <br><br>
+                One of Sean's standout qualities is his remarkable ability to distill complex concepts into easily understandable insights for both internal colleagues and external stakeholders. His talent for showcasing the value of our software while effortlessly navigating through intricate inquiries is truly commendable and adds immense value to our team.
+                <br><br>
+                Sean has become an indispensable resource to our department, and we heavily rely on his expertise to drive our initiatives forward. His dedication and hard work have rightfully earned him a promotion to solution consultant, demonstrating his unwavering drive, impeccable skills, and admirable demeanour that are pivotal to his continued success.
+                <br><br>
+                What truly sets Sean apart is his insatiable thirst for knowledge and his seamless integration of newfound expertise into practical applications. He exemplifies the essence of a professional team player, and I wholeheartedly endorse him for any role he pursues.</p>
+                <button class="read-more-btn">Read More</button>
                 <div class="testimonial-author">
                     <span class="testimonial-name">Essam Nessim</span>
                     <span class="testimonial-title">Associate Partner at IBM | Former Manager at Diabsolut</span>
@@ -1100,25 +971,25 @@
         <div class="linktree-grid">
             <!-- LinkedIn -->
             <a href="https://www.linkedin.com/in/sean-docherty-901360239/" class="link-card" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 <span class="link-name">LinkedIn</span>
             </a>
 
             <!-- GitHub -->
             <a href="https://github.com/DochertyDev/" class="link-card" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 <span class="link-name">GitHub</span>
             </a>
 
             <!-- Trailblazer (Salesforce) -->
             <a href="https://www.salesforce.com/trailblazer/smdocherty" class="link-card" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
                 <span class="link-name">Trailblazer</span>
             </a>
 
             <!-- YouTube -->
             <a href="https://www.youtube.com/@DochertyDev" class="link-card" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
                 <span class="link-name">YouTube</span>
             </a>
         </div>
@@ -1135,7 +1006,7 @@
 
     <script>
         // ========== SMOOTH SCROLL WITH OFFSET ==========
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
 
@@ -1192,13 +1063,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 e.preventDefault();
                 e.stopPropagation(); // Prevent the project-link from navigating
 
-                const description = this.previousElementSibling; // The project-description paragraph
-                const projectContent = this.closest('.project-content'); // Get the parent project-content
-                const title = projectContent ? projectContent.querySelector('.project-title') : null; // Find the project-title
+                const card = this.closest('.project-card, .testimonial-card');
+                if (!card) return;
+
+                const description = card.querySelector('.project-description, .testimonial-text');
+                const title = card.querySelector('.project-title');
 
                 if (description) {
                     description.classList.toggle('expanded');
-                    if (title) { // Toggle expanded class on title if found
+                    if (title) { 
                         title.classList.toggle('expanded');
                     }
 
