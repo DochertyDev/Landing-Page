@@ -16,11 +16,28 @@
     <style>
         /* ========== CSS VARIABLES & DESIGN SYSTEM ========== */
         :root {
-            --color-bg-primary: #18191A;            /* deep techy charcoal background */
-            --color-bg-accent: #212223;             /* accent: slightly lighter for cards/sections */
-            --color-text-primary: #ECECEC;           /* high contrast, soft white */
-            --color-accent-main: #40A8F5;           /* highlight/call-to-action */
-            --color-accent-secondary: #ffffff;      /* secondary accent, for ligatures/tags */
+  /* hsl (fallback color) */
+  --bg-dark: hsl(336 0% 1%);
+  --bg: hsl(300 0% 4%);
+  --bg-light: hsl(0 0% 9%);
+  --text: hsl(300 0% 95%);
+  --text-muted: hsl(300 0% 69%);
+  --highlight: hsl(330 0% 39%);
+  --border: hsl(0 0% 28%);
+  --border-muted: hsl(300 0% 18%);
+  --primary: hsl(184 54% 57%);
+  --secondary: hsl(2 67% 75%);
+  /* oklch */
+  --bg-dark: oklch(0.1 0 202);
+  --bg: oklch(0.15 0 202);
+  --bg-light: oklch(0.2 0 202);
+  --text: oklch(0.96 0 202);
+  --text-muted: oklch(0.76 0 202);
+  --highlight: oklch(0.5 0 202);
+  --border: oklch(0.4 0 202);
+  --border-muted: oklch(0.3 0 202);
+  --primary: oklch(0.76 0.1 202);
+  --secondary: oklch(0.76 0.1 22);
             --font-primary: 'JetBrains Mono', 'Fira Mono', monospace;
             --border-radius-global: 8px;             /* subtle curve, matches JB Mono’s cards/buttons */
             --shadow-main: 0 2px 16px #0005;        /* smooth shadow for cards/modal depth */
@@ -43,11 +60,38 @@
 
         body {
             font-family: var(--font-primary);
-            background-color: var(--color-bg-primary);
-            color: var(--color-text-primary);
+            background-color: var(--bg-dark);
+            color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            -moz-osx-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-color-scheme: light) {
+          body {
+            /* hsl (fallback color) */
+            --bg-dark: hsl(0 0% 90%);
+            --bg: hsl(300 0% 95%);
+            --bg-light: hsl(300 50% 100%);
+            --text: hsl(300 0% 4%);
+            --text-muted: hsl(0 0% 28%);
+            --highlight: hsl(300 50% 100%);
+            --border: hsl(NaN 0% 50%);
+            --border-muted: hsl(340 0% 62%);
+            --primary: hsl(184 100% 30%);
+            --secondary: hsl(359 44% 60%);
+            /* oklch */
+            --bg-dark: oklch(0.92 0 202);
+            --bg: oklch(0.96 0 202);
+            --bg-light: oklch(1 0 202);
+            --text: oklch(0.15 0 202);
+            --text-muted: oklch(0.4 0 202);
+            --highlight: oklch(1 0 202);
+            --border: oklch(0.6 0 202);
+            --border-muted: oklch(0.7 0 202);
+            --primary: oklch(0.4 0.1 202);
+            --secondary: oklch(0.4 0.1 22);
+          }
         }
 
         /* ========== HERO SECTION ========== */
@@ -57,7 +101,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(180deg, var(--color-bg-primary) 0%, #212223 100%);
+            background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-dark) 100%);
             overflow: hidden;
             text-align: center;
         }
@@ -73,7 +117,7 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: clamp(3rem, 8vw, 5.5rem);
             font-weight: 700;
-            color: var(--color-text-primary);
+            color: var(--text);
             margin-bottom: var(--spacing-sm);
             letter-spacing: -0.03em;
             line-height: 1.1;
@@ -81,7 +125,7 @@
 
         .hero-headline {
             font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            color: var(--color-text-primary);
+            color: var(--text);
             opacity: 0.8;
             margin-bottom: var(--spacing-lg);
             font-weight: 400;
@@ -108,35 +152,34 @@
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
-            border: 1px solid transparent;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--color-accent-main) 0%, #3a96d9 100%);
-            color: var(--color-bg-primary);
+            background: linear-gradient(to bottom, var(--primary) 0%, #3a96d9 100%);
+            color: var(--bg);
             box-shadow: 0 8px 24px #0008, 0 4px 12px #0006, 0 2px 4px #0004, inset 0 1px 0 #ffffff15;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 32px rgba(64, 168, 245, 0.3), 0 6px 16px #0006, inset 0 1px 0 #ffffff15;
-            background: linear-gradient(135deg, var(--color-accent-secondary) 0%, #e8e8e8 100%);
+            background: linear-gradient(to bottom, var(--secondary) 0%, #e8e8e8 100%);
         }
 
         .btn-secondary {
-            background: linear-gradient(135deg, rgba(42, 43, 45, 0.6) 0%, rgba(33, 34, 35, 0.3) 100%);
-            color: var(--color-accent-main);
+            background: linear-gradient(to bottom, var(--primary) 0%, #3a96d9 100%);
+            color: var(--bg);
             box-shadow: 0 8px 24px #0008, 0 4px 12px #0006, 0 2px 4px #0004, inset 0 1px 0 #ffffff08;
         }
 
         .btn-secondary:hover {
-            background: linear-gradient(135deg, rgba(64, 168, 245, 0.2) 0%, rgba(64, 168, 245, 0.1) 100%);
+            background: linear-gradient(to bottom, var(--text) 0%, var(--primary) 100%);
             transform: translateY(-3px);
             box-shadow: 0 5px 14px rgba(64, 168, 245, 0.2), inset 0 1px 0 #ffffff08;
-            color: var(--color-accent-secondary); /* Change text color to white on hover */
+            color: var(--bg); /* Change text color to var(--bg) on hover to match .contact-email */
         }
 
         /* ========== SECTION STYLES ========== */
@@ -149,7 +192,7 @@
         .section-title {
             font-size: clamp(2rem, 4vw, 2.75rem);
             font-weight: 700;
-            color: var(--color-text-primary);
+            color: var(--text);
             margin-bottom: var(--spacing-lg);
             text-align: center;
             letter-spacing: -0.02em;
@@ -161,11 +204,11 @@
             margin: 0 auto;
             font-size: 1.1rem;
             line-height: 1.8;
-            color: var(--color-text-primary);
+            color: var(--text);
             opacity: 0.9;
             text-align: left;
             padding: var(--spacing-md);
-            background: linear-gradient(135deg, rgba(42, 43, 45, 0.5) 0%, rgba(31, 32, 33, 0.25) 100%);
+            background: var(--bg);
             border-radius: var(--border-radius-global);
             box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.05), inset 0 -1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px #0006;
             position: relative;
@@ -182,14 +225,14 @@
             pointer-events: none;
             border-radius: var(--border-radius-global) var(--border-radius-global) 0 0;
         }
-        
+
         .about-content p {
             margin-bottom: var(--spacing-md);
         }
 
         .about-content strong {
             font-weight: 700;
-            color: var(--color-accent-secondary);
+            color: var(--text);
         }
 
         /* ========== EXPERIENCE SECTION (TIMELINE) ========== */
@@ -207,7 +250,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(180deg, var(--color-accent-main) 0%, rgba(64, 168, 245, 0.2) 100%);
+            background: linear-gradient(180deg, var(--primary) 0%, rgba(64, 168, 245, 0.2) 100%);
             box-shadow: 0 0 12px rgba(64, 168, 245, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
@@ -224,13 +267,13 @@
             width: 18px;
             height: 18px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--color-accent-main) 0%, #3a96d9 100%);
-            border: 3px solid var(--color-bg-primary);
+            background: linear-gradient(to bottom, var(--primary) 0%, #3a96d9 100%);
+            border: 3px solid var(--bg);
             box-shadow: 0 0 16px rgba(64, 168, 245, 0.5), inset 0 1px 3px rgba(255, 255, 255, 0.3), inset 0 -1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .timeline-content {
-            background: linear-gradient(135deg, rgba(42, 43, 45, 0.7) 0%, rgba(33, 34, 35, 0.4) 100%);
+            background: var(--bg);
             border-radius: var(--border-radius-global);
             padding: var(--spacing-md);
             box-shadow: 0 8px 24px #0007, 0 4px 12px #0005, inset 0 1px 2px rgba(255, 255, 255, 0.06), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
@@ -245,13 +288,13 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            background: linear-gradient(90deg, transparent, var(--bg-light), transparent);
             border-radius: var(--border-radius-global) var(--border-radius-global) 0 0;
             pointer-events: none;
         }
 
         .timeline-content:hover {
-            background: linear-gradient(135deg, rgba(42, 43, 45, 0.9) 0%, rgba(33, 34, 35, 0.6) 100%);
+            background: var(--bg);
             border-color: rgba(64, 168, 245, 0.35);
             box-shadow: 0 12px 32px rgba(64, 168, 245, 0.18), inset 0 1px 2px rgba(255, 255, 255, 0.1), inset 0 -2px 4px rgba(0, 0, 0, 0.25);
             transform: translateY(-2px);
@@ -260,27 +303,27 @@
         .timeline-title {
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--color-text-primary);
+            color: var(--text);
             margin-bottom: var(--spacing-sm);
         }
 
         .timeline-meta {
             font-size: 0.9rem;
-            color: var(--color-text-primary);
+            color: var(--text);
             opacity: 0.7;
             margin-bottom: var(--spacing-sm);
         }
 
         .timeline-company {
             font-weight: 700;
-            color: var(--color-accent-main);
+            color: var(--primary);
         }
 
         .timeline-description {
             list-style: none;
             padding: 0;
             font-size: 0.95rem;
-            color: var(--color-text-primary);
+            color: var(--text);
             opacity: 0.8;
         }
 
@@ -294,7 +337,7 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--color-accent-secondary);
+            color: var(--primary);
             font-weight: 700;
         }
 
@@ -311,7 +354,7 @@
         }
 
         .project-card {
-            background: linear-gradient(135deg, rgba(42, 43, 45, 0.6) 0%, rgba(31, 32, 33, 0.3) 100%);
+            background: var(--bg);
             border-radius: var(--border-radius-global);
             overflow: hidden;
             box-shadow: 0 8px 24px #0007, 0 4px 12px #0005, inset 0 1px 2px rgba(255, 255, 255, 0.05);
@@ -329,7 +372,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+            background: var(--bg);
             pointer-events: none;
             z-index: 2;
         }
@@ -337,14 +380,14 @@
         .project-link:hover .project-card {
             transform: translateY(-8px) scale(1.02);
             border-color: rgba(64, 168, 245, 0.4);
-            background: linear-gradient(135deg, rgba(42, 43, 45, 0.85) 0%, rgba(31, 32, 33, 0.55) 100%);
+            background: var(--bg);
             box-shadow: 0 20px 48px rgba(64, 168, 245, 0.25), 0 12px 24px rgba(64, 168, 245, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.08);
         }
 
         .project-thumbnail {
             width: 100%;
             height: 180px;
-            background: linear-gradient(135deg, var(--color-bg-layer-2) 0%, var(--color-bg-primary) 100%);
+            background: linear-gradient(to bottom, var(--color-bg-layer-2) 0%, var(--bg) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -378,7 +421,7 @@
             font-family: 'JetBrains Mono', monospace;
             font-weight: 700;
             font-size: 1.25rem;
-            color: var(--color-text-primary);
+            color: var(--text);
             margin-bottom: var(--spacing-sm);
         }
         
@@ -390,14 +433,14 @@
 
         .project-date {
             font-size: 0.85rem;
-            color: var(--color-text-primary);
+            color: var(--text);
             opacity: 0.7;
             margin-bottom: var(--spacing-sm);
         }
 
         .project-description {
             font-size: 0.95rem;
-            color: var(--color-text-primary);
+            color: var(--text);
             opacity: 0.8;
             line-height: 1.6;
             flex-grow: 1;
@@ -421,7 +464,7 @@
         .read-more-btn {
             background: none;
             border: none;
-            color: var(--color-accent-main);
+            color: var(--primary);
             font-size: 0.9rem;
             font-weight: 700;
             cursor: pointer;
@@ -432,7 +475,7 @@
         }
 
         .read-more-btn:hover {
-            color: var(--color-accent-secondary);
+            color: var(--secondary);
             text-decoration: underline;
         }
 
@@ -449,7 +492,7 @@
         }
 
         .expertise-card {
-            background: linear-gradient(135deg, rgba(42, 43, 45, 0.6) 0%, rgba(33, 34, 35, 0.3) 100%);
+            background: var(--bg);
             border-radius: var(--border-radius-global);
             padding: var(--spacing-md);
             box-shadow: 0 8px 24px #0007, 0 4px 12px #0005, inset 0 1px 2px rgba(255, 255, 255, 0.05), inset 0 -2px 4px rgba(0, 0, 0, 0.15);
@@ -467,14 +510,14 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: var(--bg);
             pointer-events: none;
         }
 
         .expertise-card:hover {
             transform: translateY(-4px);
             border-color: rgba(64, 168, 245, 0.3);
-            background: linear-gradient(135deg, rgba(42, 43, 45, 0.8) 0%, rgba(33, 34, 35, 0.5) 100%);
+            background: var(--bg);
             box-shadow: 0 12px 32px rgba(64, 168, 245, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.08), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
         }
 
@@ -487,7 +530,7 @@
         }
 
         .expertise-card .cert-card {
-            background: var(--color-bg-primary);
+            background: var(--bg-light);
             box-shadow: none;
         }
 
@@ -502,7 +545,7 @@
         .category-title {
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--color-text-primary);
+            color: var(--text);
             margin-bottom: var(--spacing-md);
             display: flex;
             align-items: center;
@@ -514,7 +557,7 @@
             content: '';
             width: 4px;
             height: 24px;
-            background: linear-gradient(180deg, var(--color-accent-main) 0%, rgba(64, 168, 245, 0.4) 100%);
+            background: linear-gradient(180deg, var(--primary) 0%, rgba(64, 168, 245, 0.4) 100%);
             border-radius: 2px;
             box-shadow: 0 0 8px rgba(64, 168, 245, 0.4);
         }
@@ -527,14 +570,13 @@
         }
 
         .skill-tag {
-            background: linear-gradient(135deg, rgba(64, 168, 245, 0.18) 0%, rgba(64, 168, 245, 0.1) 100%);
-            color: var(--color-accent-secondary);
+            background: linear-gradient(to bottom, var(--primary) 0%, #3a96d9 100%);
+            color: var(--bg);
             font-family: 'JetBrains Mono', monospace;
             padding: var(--spacing-sm) var(--spacing-md);
             border-radius: 999px;
             font-size: 0.9rem;
             font-weight: 400;
-            border: 1px solid rgba(64, 168, 245, 0.35);
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.08), inset 0 -1px 1px rgba(0, 0, 0, 0.15);
             transition: all 0.2s ease;
             position: relative;
@@ -553,7 +595,7 @@
         }
 
         .skill-tag:hover {
-            background: linear-gradient(135deg, rgba(64, 168, 245, 0.28) 0%, rgba(64, 168, 245, 0.18) 100%);
+            background: linear-gradient(to bottom, var(--text) 0%, var(--primary) 100%);
             border-color: rgba(64, 168, 245, 0.5);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(64, 168, 245, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.1);
@@ -567,7 +609,7 @@
         }
 
         .cert-card {
-            background: linear-gradient(135deg, rgba(42, 43, 45, 0.55) 0%, rgba(31, 32, 33, 0.3) 100%);
+            background: linear-gradient(to bottom, rgba(42, 43, 45, 0.55) 0%, rgba(31, 32, 33, 0.3) 100%);
             border-radius: var(--border-radius-global);
             padding: var(--spacing-md);
             box-shadow: 0 6px 18px #0006, 0 3px 8px #0004, inset 0 1px 2px rgba(255, 255, 255, 0.06), inset 0 -1px 2px rgba(0, 0, 0, 0.15);
@@ -590,25 +632,25 @@
         .cert-card:hover {
             transform: translateY(-3px);
             border-color: rgba(64, 168, 245, 0.28);
-            background: linear-gradient(135deg, rgba(42, 43, 45, 0.7) 0%, rgba(31, 32, 33, 0.45) 100%);
+            background: linear-gradient(to bottom, hsl(210, 2%, 16%) 0%, var(--bg-light) 100%);
             box-shadow: 0 10px 26px rgba(64, 168, 245, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.08), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .cert-title {
             font-size: 1.1rem;
             font-weight: 700;
-            color: var(--color-text-primary);
+            color: var(--text);
             margin-bottom: var(--spacing-sm);
         }
         .cert-issuer {
             font-size: 0.9rem;
-            color: var(--color-accent-main);
+            color: var(--primary);
             margin-bottom: var(--spacing-sm);
         }
 
         .cert-date {
             font-size: 0.85rem;
-            color: var(--color-text-primary);
+            color: var(--text);
             opacity: 0.7;
         }
 
@@ -620,7 +662,7 @@
         }
 
         .testimonial-card {
-            background: linear-gradient(135deg, rgba(42, 43, 45, 0.6) 0%, rgba(31, 32, 33, 0.3) 100%);
+            background: var(--bg);
             border-radius: var(--border-radius-global);
             padding: var(--spacing-lg);
             box-shadow: 0 8px 24px #0007, 0 4px 12px #0005, inset 0 1px 2px rgba(255, 255, 255, 0.05), inset 0 -2px 4px rgba(0, 0, 0, 0.15);
@@ -635,21 +677,21 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: var(--bg);
             pointer-events: none;
         }
 
         .testimonial-card:hover {
             transform: translateY(-4px);
             border-color: rgba(64, 168, 245, 0.3);
-            background: linear-gradient(135deg, rgba(42, 43, 45, 0.8) 0%, rgba(31, 32, 33, 0.5) 100%);
+            background: var(--bg);
             box-shadow: 0 12px 32px rgba(64, 168, 245, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.08), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .testimonial-quote {
             font-family: 'JetBrains Mono', monospace;
             font-size: 4rem;
-            color: var(--color-accent-main);
+            color: var(--primary);
             opacity: 0.3;
             position: absolute;
             top: var(--spacing-md);
@@ -661,7 +703,7 @@
         .testimonial-text {
             font-size: 1rem;
             line-height: 1.7;
-            color: var(--color-text-primary);
+            color: var(--text);
             opacity: 0.9;
             margin-bottom: var(--spacing-md);
             position: relative;
@@ -690,22 +732,22 @@
 
         .testimonial-name {
             font-weight: 700;
-            color: var(--color-accent-main);
+            color: var(--primary);
             font-size: 1rem;
         }
 
         .testimonial-title {
             font-size: 0.85rem;
-            color: var(--color-text-primary);
+            color: var(--text);
             opacity: 0.7;
             font-style: italic;
         }
 
         /* ========== LINK TREE ========== */
         .linktree {
-            background: var(--color-bg-accent);
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
+            background: var(--bg-dark);
+            border-top: 1px solid var(--bg-dark);
+            border-bottom: 1px solid var(--bg-dark);
         }
 
         .linktree-grid {
@@ -722,12 +764,12 @@
             align-items: center;
             justify-content: center;
             padding: var(--spacing-lg);
-            background: rgb(39, 40, 41);
+            background: var(--bg);
             border-radius: var(--border-radius-global);
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 24px #0006, 0 4px 12px #0004, inset 0 1px 2px rgba(255, 255, 255, 0.05);
-            color: var(--color-text-primary);
+            box-shadow: 0 8px 24px #0006, 0 44px 12px #0004, inset 0 1px 2px rgba(255, 255, 255, 0.05);
+            color: var(--text);
             position: relative;
         }
 
@@ -745,8 +787,8 @@
         .link-card:hover {
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 12px 32px rgba(64, 168, 245, 0.15), 0 8px 20px rgba(64, 168, 245, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.08);
-            border-color: var(--color-accent-main);
-            color: var(--color-accent-main);
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         .link-card svg {
@@ -768,7 +810,7 @@
 
         .contact-subtitle {
             font-size: 1.125rem;
-            color: var(--color-text-primary);
+            color: var(--text);
             opacity: 0.8;
             margin-bottom: var(--spacing-lg);
             max-width: 600px;
@@ -781,8 +823,8 @@
             align-items: center;
             gap: var(--spacing-sm);
             padding: var(--spacing-md) var(--spacing-lg);
-            background: linear-gradient(135deg, var(--color-accent-main) 0%, #3a96d9 100%);
-            color: var(--color-bg-primary);
+            background: linear-gradient(to bottom, var(--primary) 0%, #3a96d9 100%);
+            color: var(--bg);
             text-decoration: none;
             border-radius: 999px;
             font-size: 1.125rem;
@@ -793,7 +835,7 @@
         }
 
         .contact-email:hover {
-            background: linear-gradient(135deg, var(--color-accent-secondary) 0%, #e8e8e8 100%);
+            background: linear-gradient(to bottom, var(--text) 0%, var(--primary) 100%);
             transform: translateY(-3px);
             box-shadow: 0 12px 32px rgba(64, 168, 245, 0.3), 0 6px 16px #0006, inset 0 1px 0 #ffffff15;
         }
@@ -844,7 +886,7 @@
         .skills-toggle-btn {
             background: none;
             border: none;
-            color: var(--color-accent-main);
+            color: var(--primary);
             cursor: pointer;
             font-size: 1.5rem;
             line-height: 1;
@@ -902,13 +944,13 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <p>I believe technology should empower, not complicate. My journey into <strong>Salesforce, AI solutions, and technology</strong> all started with curiosity and questions. "How does it work?", "What does it do?", and "Who does it benefit?". These are questions I have been asking myself nearly my entire life, constantly replacing the "it" with new variables.</p>
-            <p>Over the past three years of consulting, I'veevolved from learning the ropes as an Associate to leading client engagements as a <strong>Solutions Consultant</strong>. My passion lies in bridging the gap between technical possibilities and business realities, translating ideas into working solutions that drive real value.</p>
+            <p>Over the past three years of consulting, I've evolved from learning the ropes as an Associate to leading client engagements as a <strong>Solutions Consultant</strong>. My passion lies in bridging the gap between technical possibilities and business realities, translating ideas into working solutions that drive real value.</p>
             <p>What drives me most is staying on top of the fast-moving tech landscape, researching emerging tools and frameworks, applying them, and simplifying the concepts for unfamiliar audiences. The moment a client sees their vision come to life in a demo, or when a custom dashboard reveals insights they never knew existed. I thrive on continuous learning, whether it's mastering the latest Salesforce AI capabilities like Agentforce, building privacy-focused tools like my personal RedactFlow project, or exploring cutting-edge technologies like Model Context Protocol.</p>
             <p>When I'm not thinking about solutions or configuring Salesforce environments, you'll find me experimenting with new AI frameworks, working on open-source projects, or helping others understand how intelligent automation can transform their workflows.</p>
         </div>
     </section>
 
-    <!-- ========== EXPERIENCE SECTION ========== -->
+    <!-- ========== EXPERIENCE SECTION (TIMELINE) ========== -->
     <section class="section" id="experience">
         <h2 class="section-title">Professional Journey</h2>
         <div class="timeline">
@@ -942,7 +984,7 @@
                         <li>Consulted with clients during pre-sales cycles to determine optimal tooling and implementation strategies tailored to their unique needs</li>
                         <li>Supported process improvement initiatives by documenting detailed business requirements, creating process flow diagrams, and identifying automation opportunities</li>
                         <li>Facilitated cross-departmental collaboration to gather requirements and translate business objectives into technical specifications</li>
-                        <li>Delivered customized product demonstrations and training sessions to external clients, partners, and internal teams, accelerating adoption and understanding</li>
+                        <li>Delivered customized product demonstrations and training sessions to external clients, partners, and internal teams, accelerating adoption and and understanding</li>
                     </ul>
                 </div>
             </div>
