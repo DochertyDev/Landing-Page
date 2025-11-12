@@ -129,15 +129,14 @@
         .btn-secondary {
             background: linear-gradient(135deg, rgba(42, 43, 45, 0.6) 0%, rgba(33, 34, 35, 0.3) 100%);
             color: var(--color-accent-main);
-            border: 1px solid var(--color-accent-main);
             box-shadow: 0 8px 24px #0008, 0 4px 12px #0006, 0 2px 4px #0004, inset 0 1px 0 #ffffff08;
         }
 
         .btn-secondary:hover {
             background: linear-gradient(135deg, rgba(64, 168, 245, 0.2) 0%, rgba(64, 168, 245, 0.1) 100%);
             transform: translateY(-3px);
-            box-shadow: 0 10px 28px rgba(64, 168, 245, 0.2), inset 0 1px 0 #ffffff08;
-            border-color: var(--color-accent-secondary);
+            box-shadow: 0 5px 14px rgba(64, 168, 245, 0.2), inset 0 1px 0 #ffffff08;
+            color: var(--color-accent-secondary); /* Change text color to white on hover */
         }
 
         /* ========== SECTION STYLES ========== */
@@ -168,7 +167,6 @@
             padding: var(--spacing-md);
             background: linear-gradient(135deg, rgba(42, 43, 45, 0.5) 0%, rgba(31, 32, 33, 0.25) 100%);
             border-radius: var(--border-radius-global);
-            border: 1px solid rgba(64, 168, 245, 0.15);
             box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.05), inset 0 -1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px #0006;
             position: relative;
         }
@@ -236,7 +234,6 @@
             border-radius: var(--border-radius-global);
             padding: var(--spacing-md);
             box-shadow: 0 8px 24px #0007, 0 4px 12px #0005, inset 0 1px 2px rgba(255, 255, 255, 0.06), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(64, 168, 245, 0.18);
             transition: all 0.3s ease;
             position: relative;
         }
@@ -319,7 +316,6 @@
             overflow: hidden;
             box-shadow: 0 8px 24px #0007, 0 4px 12px #0005, inset 0 1px 2px rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
-            border: 1px solid rgba(64, 168, 245, 0.15);
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -457,7 +453,6 @@
             border-radius: var(--border-radius-global);
             padding: var(--spacing-md);
             box-shadow: 0 8px 24px #0007, 0 4px 12px #0005, inset 0 1px 2px rgba(255, 255, 255, 0.05), inset 0 -2px 4px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(64, 168, 245, 0.15);
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -577,7 +572,6 @@
             padding: var(--spacing-md);
             box-shadow: 0 6px 18px #0006, 0 3px 8px #0004, inset 0 1px 2px rgba(255, 255, 255, 0.06), inset 0 -1px 2px rgba(0, 0, 0, 0.15);
             text-align: left;
-            border: 1px solid rgba(64, 168, 245, 0.12);
             transition: all 0.3s ease;
             position: relative;
         }
@@ -631,7 +625,6 @@
             padding: var(--spacing-lg);
             box-shadow: 0 8px 24px #0007, 0 4px 12px #0005, inset 0 1px 2px rgba(255, 255, 255, 0.05), inset 0 -2px 4px rgba(0, 0, 0, 0.15);
             position: relative;
-            border: 1px solid rgba(64, 168, 245, 0.15);
             transition: all 0.3s ease;
         }
 
@@ -729,13 +722,12 @@
             align-items: center;
             justify-content: center;
             padding: var(--spacing-lg);
-            background: linear-gradient(135deg, rgba(33, 34, 35, 0.6) 0%, rgba(24, 25, 26, 0.4) 100%);
+            background: rgb(39, 40, 41);
             border-radius: var(--border-radius-global);
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 8px 24px #0006, 0 4px 12px #0004, inset 0 1px 2px rgba(255, 255, 255, 0.05);
             color: var(--color-text-primary);
-            border: 1px solid rgba(64, 168, 245, 0.12);
             position: relative;
         }
 
