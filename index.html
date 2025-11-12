@@ -26,7 +26,7 @@
   --border: hsl(0 0% 28%);
   --border-muted: hsl(300 0% 18%);
   --primary: hsl(184 54% 57%);
-  --secondary: hsl(2 67% 75%);
+  --secondary: hsl(204, 67%, 54%);
   /* oklch */
   --bg-dark: oklch(0.1 0 202);
   --bg: oklch(0.15 0 202);
@@ -37,7 +37,7 @@
   --border: oklch(0.4 0 202);
   --border-muted: oklch(0.3 0 202);
   --primary: oklch(0.76 0.1 202);
-  --secondary: oklch(0.76 0.1 22);
+  --secondary: oklch(0.6509 0.13 243.15);
             --font-primary: 'JetBrains Mono', 'Fira Mono', monospace;
             --border-radius-global: 8px;             /* subtle curve, matches JB Mono’s cards/buttons */
             --shadow-main: 0 2px 16px #0005;        /* smooth shadow for cards/modal depth */
@@ -79,7 +79,7 @@
             --border: hsl(NaN 0% 50%);
             --border-muted: hsl(340 0% 62%);
             --primary: hsl(184 100% 30%);
-            --secondary: hsl(359 44% 60%);
+            --secondary: hsl(204, 67%, 54%);
             /* oklch */
             --bg-dark: oklch(0.92 0 202);
             --bg: oklch(0.96 0 202);
@@ -250,7 +250,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(180deg, var(--primary) 0%, rgba(64, 168, 245, 0.2) 100%);
+            background: linear-gradient(180deg, var(--secondary) 0%, rgba(64, 168, 245, 0.2) 100%);
             box-shadow: 0 0 12px rgba(64, 168, 245, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
@@ -316,7 +316,7 @@
 
         .timeline-company {
             font-weight: 700;
-            color: var(--primary);
+            color: var(--secondary);
         }
 
         .timeline-description {
@@ -337,7 +337,7 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--primary);
+            color: var(--secondary);
             font-weight: 700;
         }
 
@@ -464,7 +464,7 @@
         .read-more-btn {
             background: none;
             border: none;
-            color: var(--primary);
+            color: var(--secondary);
             font-size: 0.9rem;
             font-weight: 700;
             cursor: pointer;
@@ -475,7 +475,7 @@
         }
 
         .read-more-btn:hover {
-            color: var(--secondary);
+            color: var(--primary);
             text-decoration: underline;
         }
 
@@ -557,7 +557,7 @@
             content: '';
             width: 4px;
             height: 24px;
-            background: linear-gradient(180deg, var(--primary) 0%, rgba(64, 168, 245, 0.4) 100%);
+            background: linear-gradient(180deg, var(--secondary) 0%, rgba(64, 168, 245, 0.4) 100%);
             border-radius: 2px;
             box-shadow: 0 0 8px rgba(64, 168, 245, 0.4);
         }
@@ -644,7 +644,7 @@
         }
         .cert-issuer {
             font-size: 0.9rem;
-            color: var(--primary);
+            color: var(--secondary);
             margin-bottom: var(--spacing-sm);
         }
 
@@ -691,7 +691,7 @@
         .testimonial-quote {
             font-family: 'JetBrains Mono', monospace;
             font-size: 4rem;
-            color: var(--primary);
+            color: var(--secondary);
             opacity: 0.3;
             position: absolute;
             top: var(--spacing-md);
@@ -732,7 +732,7 @@
 
         .testimonial-name {
             font-weight: 700;
-            color: var(--primary);
+            color: var(--text);
             font-size: 1rem;
         }
 
