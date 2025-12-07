@@ -16,34 +16,40 @@
     <style>
         /* ========== CSS VARIABLES & DESIGN SYSTEM ========== */
         :root {
-  /* hsl (fallback color) */
-  --bg-dark: hsl(336 0% 1%);
-  --bg: hsl(300 0% 7%);
-  --bg-light: hsl(0 0% 12%);
-  --text: hsl(300 0% 95%);
-  --text-muted: hsl(300 0% 69%);
-  --highlight: hsl(330 0% 39%);
-  --border: hsl(0 0% 28%);
-  --border-muted: hsl(300 0% 18%);
-  --primary: hsl(184 54% 57%);
-  --secondary: hsl(204, 67%, 54%);
-  /* oklch */
-  --bg-dark: oklch(0.1 0 202);
-  --bg: oklch(0.17 0 202);
-  --bg-light: oklch(0.20 0 202);
-  --text: oklch(0.96 0 202);
-  --text-muted: oklch(0.76 0 202);
-  --highlight: oklch(0.5 0 202);
-  --border: oklch(0.4 0 202);
-  --border-muted: oklch(0.3 0 202);
-  --primary: oklch(0.76 0.1 202);
-  --secondary: oklch(0.6509 0.13 243.15);
+            /* Dark Mode (Default) */
+            --bg-dark: oklch(0.1 0 202);
+            --bg: oklch(0.17 0 202);
+            --bg-light: oklch(0.20 0 202);
+            --text: oklch(0.96 0 202);
+            --text-muted: oklch(0.76 0 202);
+            --highlight: oklch(0.5 0 202);
+            --border: oklch(0.4 0 202);
+            --border-muted: oklch(0.3 0 202);
+            --primary: oklch(0.76 0.1 202);
+            --secondary: oklch(0.6509 0.13 243.15);
+
             --font-primary: 'JetBrains Mono', 'Fira Mono', monospace;
-            --border-radius-global: 8px;             /* subtle curve, matches JB Mono’s cards/buttons */
-            --shadow-main: 0 2px 16px #0005;        /* smooth shadow for cards/modal depth */
-            --spacing-lg: 2.5rem;                   /* section gap */
+            --border-radius-global: 8px;
+            --shadow-main: 0 2px 16px #0005;
+            --spacing-lg: 2.5rem;
             --spacing-md: 1.25rem;
             --spacing-sm: 0.5rem;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                /* Light Mode */
+                --bg-dark: oklch(0.92 0 202);
+                --bg: oklch(0.96 0 202);
+                --bg-light: oklch(1 0 202);
+                --text: oklch(0.15 0 202);
+                --text-muted: oklch(0.4 0 202);
+                --highlight: oklch(1 0 202);
+                --border: oklch(0.6 0 202);
+                --border-muted: oklch(0.7 0 202);
+                --primary: oklch(0.4 0.1 202);
+                --secondary: oklch(0.4 0.1 22);
+            }
         }
 
         /* ========== BASE STYLES ========== */
@@ -64,34 +70,7 @@
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-osx-font-smoothing: grayscale;
-        }
-
-        @media (prefers-color-scheme: light) {
-          body {
-            /* hsl (fallback color) */
-            --bg-dark: hsl(0 0% 90%);
-            --bg: hsl(300 0% 95%);
-            --bg-light: hsl(300 50% 100%);
-            --text: hsl(300 0% 4%);
-            --text-muted: hsl(0 0% 28%);
-            --highlight: hsl(300 50% 100%);
-            --border: hsl(NaN 0% 50%);
-            --border-muted: hsl(340 0% 62%);
-            --primary: hsl(184 100% 30%);
-            --secondary: hsl(204, 67%, 54%);
-            /* oklch */
-            --bg-dark: oklch(0.92 0 202);
-            --bg: oklch(0.96 0 202);
-            --bg-light: oklch(1 0 202);
-            --text: oklch(0.15 0 202);
-            --text-muted: oklch(0.4 0 202);
-            --highlight: oklch(1 0 202);
-            --border: oklch(0.6 0 202);
-            --border-muted: oklch(0.7 0 202);
-            --primary: oklch(0.4 0.1 202);
-            --secondary: oklch(0.4 0.1 22);
-          }
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* ========== HERO SECTION ========== */
@@ -567,6 +546,9 @@
             flex-wrap: wrap;
             gap: var(--spacing-sm);
             justify-content: center;
+            transition: all 0.4s ease-in;
+            max-height: 1000px; /* Adjust as needed */
+            opacity: 1;
         }
 
         .skill-tag {
@@ -909,11 +891,6 @@
             transition: all 0.4s ease-out;
         }
 
-        .skills-tags {
-            transition: all 0.4s ease-in;
-            max-height: 1000px; /* Adjust as needed */
-            opacity: 1;
-        }
         .category-title-container {
             display: flex;
             align-items: center;
@@ -1232,13 +1209,13 @@
                             <span class="skill-tag">Project Management Software</span>
                             <span class="skill-tag">Demo Configuration & Delivery</span>
                             <span class="skill-tag">Training Delivery</span>
-                            <span class="skill-tag">Implementation Scoping</span>
-                            <span class="skill-tag">Service Estimation</span>
-                            <span class="skill-tag">Proposal Creation & Walkthroughs</span>
-                            <span class="skill-tag">RFP Response</span>
-                            <span class="skill-tag">Vendor Collaboration</span>
-                            <span class="skill-tag">Waterfall & Agile Methodology</span>
-                            <span class="skill-tag">CI/CD</span>
+                            <span class_tag">Implementation Scoping</span>
+                            <span class_tag">Service Estimation</span>
+                            <span class_tag">Proposal Creation & Walkthroughs</span>
+                            <span class_tag">RFP Response</span>
+                            <span class_tag">Vendor Collaboration</span>
+                            <span class_tag">Waterfall & Agile Methodology</span>
+                            <span class_tag">CI/CD</span>
                         </div>
                     </div>
                 </div>
