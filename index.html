@@ -332,6 +332,18 @@
             color: inherit;
         }
 
+        .project-link::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .project-link:focus-visible::after {
+            outline: 2px solid var(--primary);
+            outline-offset: -4px;
+        }
+
         .project-card {
             background: var(--bg);
             border-radius: var(--border-radius-global);
@@ -356,7 +368,8 @@
             z-index: 2;
         }
 
-        .project-link:hover .project-card {
+        .project-card:hover,
+        .project-card:focus-within {
             transform: translateY(-8px) scale(1.02);
             border-color: rgba(64, 168, 245, 0.4);
             background: var(--bg);
@@ -441,6 +454,8 @@
         }
 
         .read-more-btn {
+            position: relative;
+            z-index: 2;
             background: none;
             border: none;
             color: var(--secondary);
@@ -988,82 +1003,70 @@
         <h2 class="section-title">My Personal Projects</h2>
         <div class="projects-grid">
             <!-- Time MCP -->
-            <a href="https://github.com/DochertyDev/time-mcp" class="project-link" target="_blank" rel="noopener noreferrer">
-                <div class="project-card">
+            <div class="project-card">
                     <div class="project-thumbnail"><img src="https://github.com/DochertyDev/time-mcp/blob/main/images/Time-MCPscreenshot.png?raw=true" alt="Time MCP thumbnail"></div>
                     <div class="project-content">
-                        <h3 class="project-title">Time MCP</h3>
+                        <h3 class="project-title"><a href="https://github.com/DochertyDev/time-mcp" class="project-link" target="_blank" rel="noopener noreferrer">Time MCP</a></h3>
                         <p class="project-date">Nov 2025</p>
-                        <p class="project-description">Developed a lightweight MCP server to provide system time access for LLM applications like Claude and Gemini CLI. Real-time and timezone-aware data enables contextually accurate outputs for scheduling, logging, and automation. Supports integration of time-based features across diverse use cases.</p>
-                        <button class="read-more-btn">Read More</button>
+                        <p id="project-description-1" class="project-description">Developed a lightweight MCP server to provide system time access for LLM applications like Claude and Gemini CLI. Real-time and timezone-aware data enables contextually accurate outputs for scheduling, logging, and automation. Supports integration of time-based features across diverse use cases.</p>
+                        <button type="button" class="read-more-btn" aria-expanded="false" aria-controls="project-description-1">Read More</button>
                     </div>
-                </div>
-            </a>
+            </div>
 
             <!-- Gemini-CLI-Custom-Commands -->
-            <a href="https://github.com/DochertyDev/Gemini-CLI-Custom-Commands" class="project-link" target="_blank" rel="noopener noreferrer">
-                <div class="project-card">
+            <div class="project-card">
                     <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Gemini-CLI-Custom-Commands/raw/main/images/GeminiCLICommandsscreenshot.png" alt="Gemini-CLI-Custom-Commands thumbnail"></div>
                     <div class="project-content">
-                        <h3 class="project-title">Gemini CLI Custom Commands</h3>
+                        <h3 class="project-title"><a href="https://github.com/DochertyDev/Gemini-CLI-Custom-Commands" class="project-link" target="_blank" rel="noopener noreferrer">Gemini CLI Custom Commands</a></h3>
                         <p class="project-date">Oct 2025</p>
-                        <p class="project-description">Created a collection of custom slash commands to extend the functionality of Gemini CLI, designed to streamline common development workflows. The command categories include build, design, documentation, fix, and visualization.</p>
-                        <button class="read-more-btn">Read More</button>
+                        <p id="project-description-2" class="project-description">Created a collection of custom slash commands to extend the functionality of Gemini CLI, designed to streamline common development workflows. The command categories include build, design, documentation, fix, and visualization.</p>
+                        <button type="button" class="read-more-btn" aria-expanded="false" aria-controls="project-description-2">Read More</button>
                     </div>
-                </div>
-            </a>
+            </div>
 
             <!-- RedactFlow -->
-            <a href="https://github.com/DochertyDev/Redact-Flow" class="project-link" target="_blank" rel="noopener noreferrer">
-                <div class="project-card">
+            <div class="project-card">
                     <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Redact-Flow/raw/main/images/RedactFlowscreenshot.JPG" alt="RedactFlow thumbnail"></div>
                     <div class="project-content">
-                        <h3 class="project-title">RedactFlow</h3>
+                        <h3 class="project-title"><a href="https://github.com/DochertyDev/Redact-Flow" class="project-link" target="_blank" rel="noopener noreferrer">RedactFlow</a></h3>
                         <p class="project-date">Oct 2025</p>
-                        <p class="project-description">Designed a local web app using Microsoft Presidio to tokenize and anonymize sensitive documents for secure LLM processing. Enables offline restoration of original data via token mapping, ensuring privacy without cloud exposure.</p>
-                        <button class="read-more-btn">Read More</button>
+                        <p id="project-description-3" class="project-description">Designed a local web app using Microsoft Presidio to tokenize and anonymize sensitive documents for secure LLM processing. Enables offline restoration of original data via token mapping, ensuring privacy without cloud exposure.</p>
+                        <button type="button" class="read-more-btn" aria-expanded="false" aria-controls="project-description-3">Read More</button>
                     </div>
-                </div>
-            </a>
+            </div>
 
             <!-- Double Spend Problem Simulator -->
-            <a href="https://github.com/DochertyDev/Double-Spend-Problem-Simulator" class="project-link" target="_blank" rel="noopener noreferrer">
-                <div class="project-card">
+            <div class="project-card">
                     <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Double-Spend-Problem-Simulator/raw/main/images/DoubleSpendProblemScreenshot.png" alt="Double Spend Problem Simulator thumbnail"></div>
                     <div class="project-content">
-                        <h3 class="project-title">Double Spend Problem Simulator</h3>
+                        <h3 class="project-title"><a href="https://github.com/DochertyDev/Double-Spend-Problem-Simulator" class="project-link" target="_blank" rel="noopener noreferrer">Double Spend Problem Simulator</a></h3>
                         <p class="project-date">Sep 2025</p>
-                        <p class="project-description">Developed an interactive web app to simulate money creation in fractional-reserve banking. Users can adjust parameters like reserve ratio and deposit amount to observe how loans and deposits evolve across cycles. Features include animated flow diagrams, detailed tables, and dynamic graphs to visualize system-wide effects. Built with D3.js and Chart.js for responsive, data-driven visualizations.</p>
-                        <button class="read-more-btn">Read More</button>
+                        <p id="project-description-4" class="project-description">Developed an interactive web app to simulate money creation in fractional-reserve banking. Users can adjust parameters like reserve ratio and deposit amount to observe how loans and deposits evolve across cycles. Features include animated flow diagrams, detailed tables, and dynamic graphs to visualize system-wide effects. Built with D3.js and Chart.js for responsive, data-driven visualizations.</p>
+                        <button type="button" class="read-more-btn" aria-expanded="false" aria-controls="project-description-4">Read More</button>
                     </div>
-                </div>
-            </a>
+            </div>
 
             <!-- Password Generator -->
-            <a href="https://github.com/DochertyDev/Password-Generator" class="project-link" target="_blank" rel="noopener noreferrer">
-                <div class="project-card">
+            <div class="project-card">
                     <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Password-Generator/raw/main/images/PasswordGeneratorScreenshot.png" alt="Password Generator thumbnail"></div>
                     <div class="project-content">
-                        <h3 class="project-title">Password Generator</h3>
+                        <h3 class="project-title"><a href="https://github.com/DochertyDev/Password-Generator" class="project-link" target="_blank" rel="noopener noreferrer">Password Generator</a></h3>
                         <p class="project-date">Sep 2025</p>
-                        <p class="project-description">Built a retro-styled web app for generating secure, memorable passwords using customizable word-number-symbol combinations. Leverages cryptographically secure randomness and real-time strength indicators. Designed with a responsive, terminal-inspired UI and smooth animations for an engaging, mobile-friendly experience.</p>
-                        <button class="read-more-btn">Read More</button>
+                        <p id="project-description-5" class="project-description">Built a retro-styled web app for generating secure, memorable passwords using customizable word-number-symbol combinations. Leverages cryptographically secure randomness and real-time strength indicators. Designed with a responsive, terminal-inspired UI and smooth animations for an engaging, mobile-friendly experience.</p>
+                        <button type="button" class="read-more-btn" aria-expanded="false" aria-controls="project-description-5">Read More</button>
                     </div>
-                </div>
-            </a>
+            </div>
 
             <!-- Salesforce Barcode Scanner -->
-            <a href="https://github.com/DochertyDev/Salesforce-Barcode-Scanner" class="project-link" target="_blank" rel="noopener noreferrer">
-                <div class="project-card">
+            <div class="project-card">
                     <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Salesforce-Barcode-Scanner/raw/main/images/SalesforceBarcodeScannerscreenshot.jpg" alt="Salesforce Barcode Scanner thumbnail"></div>
                     <div class="project-content">
-                        <h3 class="project-title">Salesforce Barcode Scanner</h3>
+                        <h3 class="project-title"><a href="https://github.com/DochertyDev/Salesforce-Barcode-Scanner" class="project-link" target="_blank" rel="noopener noreferrer">Salesforce Barcode Scanner</a></h3>
                         <p class="project-date">Aug-Sep 2025</p>
-                        <p class="project-description">Implemented QR code generation and mobile barcode scanning for Salesforce Assets, enabling bulk updates via Screen Flows. Streamlined onsite data capture and maintenance logging, with scalable functionality for metadata-driven automation across diverse use cases.</p>
-                        <button class="read-more-btn">Read More</button>
+                        <p id="project-description-6" class="project-description">Implemented QR code generation and mobile barcode scanning for Salesforce Assets, enabling bulk updates via Screen Flows. Streamlined onsite data capture and maintenance logging, with scalable functionality for metadata-driven automation across diverse use cases.</p>
+                        <button type="button" class="read-more-btn" aria-expanded="false" aria-controls="project-description-6">Read More</button>
                     </div>
-                </div>
-            </a>
+            </div>
         </div>
     </section>
 
@@ -1229,14 +1232,14 @@
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="testimonial-quote">"</div>
-                <p class="testimonial-text">It's been an absolute pleasure collaborating with Sean for nearly two years here at Diabsolut. When he first joined as an associate solutions consultant in the presales department, he dove in headfirst despite having limited familiarity with the products and solutions he was tasked with supporting. However, Sean quickly proved his mettle by swiftly mastering the intricacies of our offerings, adeptly conducting demos, engaging with clients, and cultivating the confidence necessary to excel in his role.
+                <p id="testimonial-description" class="testimonial-text">It's been an absolute pleasure collaborating with Sean for nearly two years here at Diabsolut. When he first joined as an associate solutions consultant in the presales department, he dove in headfirst despite having limited familiarity with the products and solutions he was tasked with supporting. However, Sean quickly proved his mettle by swiftly mastering the intricacies of our offerings, adeptly conducting demos, engaging with clients, and cultivating the confidence necessary to excel in his role.
                 <br><br>
                 One of Sean's standout qualities is his remarkable ability to distill complex concepts into easily understandable insights for both internal colleagues and external stakeholders. His talent for showcasing the value of our software while effortlessly navigating through intricate inquiries is truly commendable and adds immense value to our team.
                 <br><br>
                 Sean has become an indispensable resource to our department, and we heavily rely on his expertise to drive our initiatives forward. His dedication and hard work have rightfully earned him a promotion to solution consultant, demonstrating his unwavering drive, impeccable skills, and admirable demeanour that are pivotal to his continued success.
                 <br><br>
                 What truly sets Sean apart is his insatiable thirst for knowledge and his seamless integration of newfound expertise into practical applications. He exemplifies the essence of a professional team player, and I wholeheartedly endorse him for any role he pursues.</p>
-                <button class="read-more-btn">Read More</button>
+                <button type="button" class="read-more-btn" aria-expanded="false" aria-controls="testimonial-description">Read More</button>
                 <div class="testimonial-author">
                     <span class="testimonial-name">Essam Nessim</span>
                     <span class="testimonial-title">Associate Partner at IBM | Former Manager at Diabsolut</span>
@@ -1341,7 +1344,6 @@
         document.querySelectorAll('.read-more-btn').forEach(button => {
             button.addEventListener('click', function (e) {
                 e.preventDefault();
-                e.stopPropagation(); // Prevent the project-link from navigating
 
                 const card = this.closest('.project-card, .testimonial-card');
                 if (!card) return;
@@ -1350,7 +1352,8 @@
                 const title = card.querySelector('.project-title');
 
                 if (description) {
-                    description.classList.toggle('expanded');
+                    const isExpanded = description.classList.toggle('expanded');
+                    this.setAttribute('aria-expanded', isExpanded);
                     if (title) { 
                         title.classList.toggle('expanded');
                     }
