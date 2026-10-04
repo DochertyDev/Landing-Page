@@ -891,7 +891,17 @@
             transition: all 0.4s ease-out;
         }
 
+        .category-title-container:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 4px;
+        }
+
         .category-title-container {
+            background: none;
+            border: none;
+            color: inherit;
+            font: inherit;
+            text-align: left;
             display: flex;
             align-items: center;
             width: 100%;
@@ -1102,10 +1112,12 @@
                 <!-- AI & Emerging Technologies Card -->
                 <div class="expertise-card">
                     <div class="skills-category">
-                        <div class="category-title-container" role="button" aria-expanded="false" aria-controls="ai-skills">
-                            <h3 class="category-title">AI & Emerging Technologies</h3>
-                            <span class="skills-toggle-btn">+</span>
-                        </div>
+                        <h3 class="category-title">
+                            <button type="button" class="category-title-container" aria-expanded="false" aria-controls="ai-skills">
+                                <span>AI & Emerging Technologies</span>
+                                <span class="skills-toggle-btn" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
                         <div id="ai-skills" class="skills-tags collapsed-panel">
                             <span class="skill-tag">Artificial Intelligence</span>
                             <span class="skill-tag">AI Agents & Orchestration</span>
@@ -1127,10 +1139,12 @@
                 <!-- Salesforce Platform Card -->
                 <div class="expertise-card">
                     <div class="skills-category">
-                        <div class="category-title-container" role="button" aria-expanded="false" aria-controls="salesforce-skills">
-                            <h3 class="category-title">Salesforce Platform</h3>
-                            <span class="skills-toggle-btn">+</span>
-                        </div>
+                        <h3 class="category-title">
+                            <button type="button" class="category-title-container" aria-expanded="false" aria-controls="salesforce-skills">
+                                <span>Salesforce Platform</span>
+                                <span class="skills-toggle-btn" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
                         <div id="salesforce-skills" class="skills-tags collapsed-panel">
                             <span class="skill-tag">Salesforce Agentforce</span>
                             <span class="skill-tag">Salesforce Sales Cloud</span>
@@ -1160,10 +1174,12 @@
                 <!-- Technical & Development Card -->
                 <div class="expertise-card">
                     <div class="skills-category">
-                        <div class="category-title-container" role="button" aria-expanded="false" aria-controls="tech-skills">
-                            <h3 class="category-title">Technical & Development</h3>
-                            <span class="skills-toggle-btn">+</span>
-                        </div>
+                        <h3 class="category-title">
+                            <button type="button" class="category-title-container" aria-expanded="false" aria-controls="tech-skills">
+                                <span>Technical & Development</span>
+                                <span class="skills-toggle-btn" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
                         <div id="tech-skills" class="skills-tags collapsed-panel">
                             <span class="skill-tag">Software Development</span>
                             <span class="skill-tag">API</span>
@@ -1181,10 +1197,12 @@
                 <!-- Data & Governance Card -->
                 <div class="expertise-card">
                     <div class="skills-category">
-                        <div class="category-title-container" role="button" aria-expanded="false" aria-controls="data-skills">
-                            <h3 class="category-title">Data & Governance</h3>
-                            <span class="skills-toggle-btn">+</span>
-                        </div>
+                        <h3 class="category-title">
+                            <button type="button" class="category-title-container" aria-expanded="false" aria-controls="data-skills">
+                                <span>Data & Governance</span>
+                                <span class="skills-toggle-btn" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
                         <div id="data-skills" class="skills-tags collapsed-panel">
                             <span class="skill-tag">Data Governance</span>
                             <span class="skill-tag">Data Privacy</span>
@@ -1197,10 +1215,12 @@
                 <!-- Business & Consulting Card -->
                 <div class="expertise-card">
                     <div class="skills-category">
-                        <div class="category-title-container" role="button" aria-expanded="false" aria-controls="business-skills">
-                            <h3 class="category-title">Business & Consulting</h3>
-                            <span class="skills-toggle-btn">+</span>
-                        </div>
+                        <h3 class="category-title">
+                            <button type="button" class="category-title-container" aria-expanded="false" aria-controls="business-skills">
+                                <span>Business & Consulting</span>
+                                <span class="skills-toggle-btn" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
                         <div id="business-skills" class="skills-tags collapsed-panel">
                             <span class="skill-tag">Professional Services Automation</span>
                             <span class="skill-tag">Business Process</span>
@@ -1366,7 +1386,7 @@
         // ========== SKILLS EXPAND/COLLAPSE FUNCTIONALITY ==========
         document.querySelectorAll('.category-title-container').forEach(container => {
             container.addEventListener('click', function () {
-                const content = this.nextElementSibling;
+                const content = document.getElementById(this.getAttribute('aria-controls'));
                 const button = this.querySelector('.skills-toggle-btn');
                 const isExpanded = this.getAttribute('aria-expanded') === 'true';
 
@@ -1381,4 +1401,3 @@
     </script>
 </body>
 </html>
-<!-- Gemini-Modified: Replaced button with span to fix accessibility issue. -->
