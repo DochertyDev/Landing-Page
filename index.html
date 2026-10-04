@@ -922,6 +922,17 @@
             width: 100%;
             cursor: pointer;
         }
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+                transform: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1331,7 +1342,7 @@
                 if (target) {
                     window.scrollTo({
                         top: target.offsetTop,
-                        behavior: 'smooth'
+                        behavior: 'auto'
                     });
                 }
             });
