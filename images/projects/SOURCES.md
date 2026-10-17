@@ -1,16 +1,16 @@
 # Project visual sources
 
-Retrieved 2026-10-17. All six existing public-project screenshots are retained as useful product evidence, with a shared Atlas frame (navy background, layered blue platforms, and an inset image). Screenshots keep their full aspect ratios with object-fit: contain; no device mockups or fabricated product UI are presented as screenshots.
+Updated 2026-10-17. All nine project cards use original conceptual SVG illustrations in the portfolio's Atlas style: navy (#091d38), slate blue (#123451), medium blue (#306ca6), ice blue (#b7d9ff), pale text, and staggered platform panels. These diagrams describe each project's purpose; they are not application screenshots.
 
-- `time-mcp.webp`: [public repository screenshot](https://raw.githubusercontent.com/DochertyDev/time-mcp/main/images/Time-MCPscreenshot.png); source SHA-256 `18092be002a205c01d9d390aee1ae40c6100b937d9639662fb49cb4ad46bf4d6`. Re-encoded to WebP with bounded dimensions, no content cropping.
-- `gemini-commands.webp`: [public repository screenshot](https://raw.githubusercontent.com/DochertyDev/Gemini-CLI-Custom-Commands/main/images/GeminiCLICommandsscreenshot.png); source SHA-256 `9d0884d6f14f965ce6d0762b078c63e58aa2d0ed1fce896ce46f55a371346631`. Re-encoded to WebP with bounded dimensions, no content cropping.
-- `redactflow.webp`: [public repository screenshot](https://raw.githubusercontent.com/DochertyDev/Redact-Flow/main/images/RedactFlowscreenshot.JPG); source SHA-256 `541e6569b93603854ce2a8674eacd6db2fc3beac36d92d021abc745747c83d7c`. Re-encoded to WebP with bounded dimensions, no content cropping.
-- `banking-simulator.webp`: [public repository screenshot](https://raw.githubusercontent.com/DochertyDev/Double-Spend-Problem-Simulator/main/images/DoubleSpendProblemScreenshot.png); source SHA-256 `2347280d2fa50b2b2e956e423e2101c2cf5c70aa6d292bb85ad7420e350ea8e3`. Re-encoded to WebP with bounded dimensions, no content cropping.
-- `password-generator.webp`: [public repository screenshot](https://raw.githubusercontent.com/DochertyDev/Password-Generator/main/images/PasswordGeneratorScreenshot.png); source SHA-256 `c42ed7e2639f6c45db54a6ca6638788924f4434cfaaa8e200904d8b5c2c7394e`. Re-encoded to WebP with bounded dimensions, no content cropping.
-- `salesforce-scanner.webp`: [public repository screenshot](https://raw.githubusercontent.com/DochertyDev/Salesforce-Barcode-Scanner/main/images/SalesforceBarcodeScannerscreenshot.jpg); source SHA-256 `5d44975c782c69c09451fc1ec20abd6a202527315ab477af3541e5ab12e9911c`. Re-encoded to WebP with bounded dimensions, no content cropping.
+The six standalone editable illustrations replace the former screenshot thumbnails:
 
-Repository metadata confirmed every source repository is public and MIT-licensed. Exact upstream notices are retained in [LICENSES.md](LICENSES.md). Only public screenshots already used by this portfolio were downloaded; no private repository or private application data was inspected.
+- `time-mcp.svg`: AI tools, a local MCP time server, and timezone-aware context.
+- `gemini-commands.svg`: reusable slash commands for development tasks.
+- `redactflow.svg`: local anonymization, token mapping, and private restoration.
+- `banking-simulator.svg`: deposits, lending cycles, and reserve effects.
+- `password-generator.svg`: word, number, and symbol combinations. The displayed password is an illustrative example.
+- `salesforce-scanner.svg`: asset QR codes, mobile scanning, and Screen Flow updates.
 
-The three additions selected in issue #23 use original purpose-specific vector illustrations in that PR: prompt templates/workflows, destination ranking, and analytics data-to-recipe-to-dashboard layers. They share the same navy/ice-blue palette and platform geometry; they are conceptual diagrams, not fabricated screenshots. Original illustration provenance is recorded with that selection. Thus the final nine-card set combines representative product screens with illustrations where a screen would be unsuitable (empty travel demo or org-dependent analytics) or unlicensed for reuse (PromptVault has no repository license).
+They match the existing embedded PromptVault, TravelRanker, and Salesforce CRM Analytics illustrations. All six are original vector artwork created for this portfolio with system-font labels and no external images, fonts, logos, or services. Project titles, descriptions, links, and disclosure behavior are unchanged. Each image has descriptive alt text. The site remains a single HTML document with local static assets and no build dependency.
 
-If images fail, descriptive alt text remains in the fixed thumbnail area, while each card keeps its independent title, description, and working link. No information or interaction relies on image hover. The page remains a single HTML document with local static assets, without a runtime image service or build dependency.
+The previous WebP screenshots are no longer displayed by the cards. Their files and upstream notices in LICENSES.md remain as historical assets; they are not sources for the new illustrations.
