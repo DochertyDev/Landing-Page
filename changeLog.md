@@ -20,3 +20,7 @@ Reviewed public repository metadata, READMEs, and top-level contents on GitHub. 
 - Leave out [Video-Games](https://github.com/DochertyDev/Video-Games): small game folders and a minimal README, without a unified product demo or sufficiently documented user journey.
 
 Descriptions are summaries of public documentation, not claims that all product workflows or Salesforce imports were independently validated. Project visuals are coordinated separately in issue #24.
+
+### Coordinated project illustrations (#23 / #24)
+
+The three added cards include original inline SVG conceptual illustrations, created for this portfolio, using the Atlas navy/ice-blue palette and platform layers. They show prompt templates/workflows, illustrative destination tiers, and datasets/recipes/dashboards. These are diagrams, not product screenshots or personal data; no third-party imagery or fonts were copied. The travel demo starts empty, analytics requires an org, and PromptVault has no repository screenshot license, so original diagrams explain their purpose more reliably. SVGs are embedded as data images with descriptive alt text; no extra runtime assets are needed. PR for #24 supplies the shared Atlas frame and locally retained screenshots for the six existing cards. Merge both for the full nine-project treatment.
