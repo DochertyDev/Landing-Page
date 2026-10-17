@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://dochertydev.github.io/Landing-Page/">
-    <img src="images/apple-touch-icon.png" width="150" alt="Sean Docherty — Atlas portfolio icon">
+    <img src="images/atlas-mark.svg" width="150" alt="Sean Docherty — Atlas portfolio icon">
   </a>
 </p>
 
