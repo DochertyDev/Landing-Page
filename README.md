@@ -16,5 +16,9 @@ Landing-Page
 
 <div align="center">
 
-<img src="images/LandingPageScreenshot.png" alt="Sean Docherty’s Atlas portfolio: layered practice hero, nine personal projects, professional journey, certifications, and contact details" width="800" style="border-radius: 16px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
+<a href="https://dochertydev.github.io/Landing-Page/">
+<img src="images/LandingPageScreenshot.png" alt="Sean Docherty’s Atlas portfolio opening section: introduction and layered platform illustration" width="800" style="border-radius: 16px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
+</a>
+
+<p><a href="https://dochertydev.github.io/Landing-Page/">Explore the full portfolio</a></p>
 </div>
