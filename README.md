@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://dochertydev.github.io/Landing-Page/">
-    <img src="images/apple-touch-icon.png" width="150" alt="Landing-Page">
+    <img src="images/apple-touch-icon.png" width="150" alt="Sean Docherty — Atlas portfolio icon">
   </a>
 </p>
 
@@ -16,5 +16,5 @@ Landing-Page
 
 <div align="center">
 
-<img src="images/LandingPageScreenshot.png" alt="LandingPageScreenshot" width="800" style="border-radius: 16px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2); transform: perspective(1000px) rotateX(2deg); transition: transform 0.3s ease;">
+<img src="images/LandingPageScreenshot.png" alt="Sean Docherty’s Atlas portfolio: layered practice hero, nine personal projects, professional journey, certifications, and contact details" width="800" style="border-radius: 16px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
 </div>
