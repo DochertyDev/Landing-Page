@@ -86,8 +86,11 @@
         #projects { background: var(--paper); }
         .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
         .project-card { background: white; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; position: relative; display: flex; flex-direction: column; }
-        .project-thumbnail { aspect-ratio: 16 / 8; background: #e0ebf9; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .project-thumbnail img { display: block; width: 100%; height: 100%; object-fit: contain; }
+        .project-thumbnail { position: relative; isolation: isolate; aspect-ratio: 16 / 8; background: var(--navy); border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 24px 28px; }
+        .project-thumbnail::before, .project-thumbnail::after { content: ''; position: absolute; z-index: -1; width: 83%; height: 70%; border: 1px solid #86b7e7; border-radius: 7px; transform: rotate(-6deg) skewX(-9deg); }
+        .project-thumbnail::before { background: #123451; top: 24%; left: 9%; }
+        .project-thumbnail::after { background: #306ca6; top: 14%; left: 6%; }
+        .project-thumbnail img { display: block; width: 100%; height: 100%; object-fit: contain; background: #f0f5fb; border: 1px solid #b7d9ff; border-radius: 4px; color: #112c4e; font-size: 14px; }
         .project-content { padding: 28px; }
         .project-title { font-size: 24px; font-weight: 550; letter-spacing: -.6px; }
         .project-link { text-decoration: none; }
@@ -254,7 +257,7 @@
         <div class="projects-grid">
             <!-- Time MCP -->
             <div class="project-card">
-                    <div class="project-thumbnail"><img src="https://github.com/DochertyDev/time-mcp/blob/main/images/Time-MCPscreenshot.png?raw=true" alt="Time MCP thumbnail" loading="lazy" decoding="async"></div>
+                    <div class="project-thumbnail"><img src="images/projects/time-mcp.webp" alt="Time MCP configuration and timezone-aware time tool output" loading="lazy" decoding="async" width="1200" height="600"></div>
                     <div class="project-content">
                         <h3 class="project-title"><a href="https://github.com/DochertyDev/time-mcp" class="project-link" target="_blank" rel="noopener noreferrer">Time MCP</a></h3>
                         <p class="project-date">Nov 2025</p>
@@ -265,7 +268,7 @@
 
             <!-- Gemini-CLI-Custom-Commands -->
             <div class="project-card">
-                    <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Gemini-CLI-Custom-Commands/raw/main/images/GeminiCLICommandsscreenshot.png" alt="Gemini-CLI-Custom-Commands thumbnail" loading="lazy" decoding="async"></div>
+                    <div class="project-thumbnail"><img src="images/projects/gemini-commands.webp" alt="Gemini CLI custom command files and workflow categories" loading="lazy" decoding="async" width="1200" height="600"></div>
                     <div class="project-content">
                         <h3 class="project-title"><a href="https://github.com/DochertyDev/Gemini-CLI-Custom-Commands" class="project-link" target="_blank" rel="noopener noreferrer">Gemini CLI Custom Commands</a></h3>
                         <p class="project-date">Oct 2025</p>
@@ -276,7 +279,7 @@
 
             <!-- RedactFlow -->
             <div class="project-card">
-                    <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Redact-Flow/raw/main/images/RedactFlowscreenshot.JPG" alt="RedactFlow thumbnail" loading="lazy" decoding="async"></div>
+                    <div class="project-thumbnail"><img src="images/projects/redactflow.webp" alt="RedactFlow document anonymization interface" loading="lazy" decoding="async" width="1200" height="600"></div>
                     <div class="project-content">
                         <h3 class="project-title"><a href="https://github.com/DochertyDev/Redact-Flow" class="project-link" target="_blank" rel="noopener noreferrer">RedactFlow</a></h3>
                         <p class="project-date">Oct 2025</p>
@@ -287,7 +290,7 @@
 
             <!-- Double Spend Problem Simulator -->
             <div class="project-card">
-                    <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Double-Spend-Problem-Simulator/raw/main/images/DoubleSpendProblemScreenshot.png" alt="Double Spend Problem Simulator thumbnail" loading="lazy" decoding="async"></div>
+                    <div class="project-thumbnail"><img src="images/projects/banking-simulator.webp" alt="Banking simulator interface with cycle data and money-flow charts" loading="lazy" decoding="async" width="1200" height="600"></div>
                     <div class="project-content">
                         <h3 class="project-title"><a href="https://github.com/DochertyDev/Double-Spend-Problem-Simulator" class="project-link" target="_blank" rel="noopener noreferrer">Double Spend Problem Simulator</a></h3>
                         <p class="project-date">Sep 2025</p>
@@ -298,7 +301,7 @@
 
             <!-- Password Generator -->
             <div class="project-card">
-                    <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Password-Generator/raw/main/images/PasswordGeneratorScreenshot.png" alt="Password Generator thumbnail" loading="lazy" decoding="async"></div>
+                    <div class="project-thumbnail"><img src="images/projects/password-generator.webp" alt="Password Generator interface with password options and strength feedback" loading="lazy" decoding="async" width="1200" height="600"></div>
                     <div class="project-content">
                         <h3 class="project-title"><a href="https://github.com/DochertyDev/Password-Generator" class="project-link" target="_blank" rel="noopener noreferrer">Password Generator</a></h3>
                         <p class="project-date">Sep 2025</p>
@@ -309,7 +312,7 @@
 
             <!-- Salesforce Barcode Scanner -->
             <div class="project-card">
-                    <div class="project-thumbnail"><img src="https://github.com/DochertyDev/Salesforce-Barcode-Scanner/raw/main/images/SalesforceBarcodeScannerscreenshot.jpg" alt="Salesforce Barcode Scanner thumbnail" loading="lazy" decoding="async"></div>
+                    <div class="project-thumbnail"><img src="images/projects/salesforce-scanner.webp" alt="Salesforce asset barcode generation and mobile scanning workflow" loading="lazy" decoding="async" width="1200" height="600"></div>
                     <div class="project-content">
                         <h3 class="project-title"><a href="https://github.com/DochertyDev/Salesforce-Barcode-Scanner" class="project-link" target="_blank" rel="noopener noreferrer">Salesforce Barcode Scanner</a></h3>
                         <p class="project-date">Aug-Sep 2025</p>
