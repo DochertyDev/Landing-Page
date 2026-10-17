@@ -99,23 +99,15 @@
         .project-description.expanded, .testimonial-text.expanded { display: block; overflow: visible; -webkit-line-clamp: unset; }
         .read-more-btn { position: relative; z-index: 2; display: inline-block; margin-top: 18px; padding: 5px 0; background: none; border: 0; color: #225d96; cursor: pointer; font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 5px; }
         #expertise { background: var(--navy); color: #f8fbff; }
-        .expertise-cards-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
-        .expertise-card { border: 1px solid #314f72; border-radius: 8px; overflow: hidden; }
-        .expertise-card:first-child { grid-column: 1 / -1; border: 0; margin-bottom: 16px; }
+        .expertise-cards-container { display: block; }
+        .expertise-card { border: 0; }
         .category-title { font-size: 20px; font-weight: 500; }
-        .expertise-card:first-child > .category-title { margin-bottom: 22px; }
+        .expertise-card > .category-title { margin-bottom: 22px; }
         .certifications-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
         .cert-card { border-top: 2px solid #6a95c7; padding: 22px 18px; background: #123451; border-radius: 0 0 6px 6px; }
         .cert-title { font-size: 17px; font-weight: 550; line-height: 1.5; }
         .cert-issuer { font-size: 14px; color: var(--ice); margin-top: 16px; }
         .cert-date { color: #a9c0db; font-size: 12px; margin-top: 5px; }
-        .category-title-container { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; border: 0; padding: 23px 24px; color: #e4effd; background: #102b49; text-align: left; cursor: pointer; font-size: 18px; }
-        .category-title-container:hover { background: #193b5e; }
-        .category-title-container:disabled { cursor: default; }
-        .skills-toggle-btn { color: #a4c8ef; font-size: 24px; line-height: 1; }
-        .skills-tags { display: flex; flex-wrap: wrap; gap: 9px; padding: 0 24px 24px; }
-        .skill-tag { color: #cee0f5; background: #193b5e; border: 1px solid #365779; border-radius: 4px; padding: 5px 10px; font-size: 13px; }
-        .skills-tags.collapsed-panel { display: none; }
         #testimonials { background: #e5eef8; }
         .testimonials-grid { max-width: 85ch; }
         .testimonial-card { position: relative; padding-left: 40px; border-left: 2px solid #7da2ce; }
@@ -169,7 +161,7 @@
             .timeline-description { margin-top: 18px; }
             .timeline-item { padding-left: 25px; }
             .timeline-title { font-size: 22px; }
-            .projects-grid, .expertise-cards-container { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
             .project-content { padding: 24px; }
             .project-title { font-size: 22px; }
             .certifications-grid { gap: 14px; }
@@ -178,7 +170,6 @@
             .testimonial-card { padding-left: 24px; }
             .testimonial-text { font-size: 16px; }
             .linktree-grid { grid-template-columns: 1fr 1fr; gap: 10px 24px; }
-            .category-title-container { padding: 20px; font-size: 17px; }
             .site-footer { flex-wrap: wrap; }
         }
         @media (max-width: 370px) {
@@ -193,22 +184,14 @@
         }
         @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
         @media print {
-            .site-nav, .hero-actions, .hero-cta, .platform-stack, .read-more-btn, .skills-toggle-btn, .skip-link { display: none; }
+            .site-nav, .hero-actions, .hero-cta, .platform-stack, .read-more-btn, .skip-link { display: none; }
+            .cert-card { color: black; background: white; }
             .hero-layout, #about, .timeline-content { display: block; }
             .hero, .site-header, #expertise, .contact, .site-footer { background: white; color: black; }
             .section { padding: 28px 0; }
             .project-description, .testimonial-text { display: block; overflow: visible; }
-            .skills-tags.collapsed-panel { display: flex; }
-            .skill-tag, .cert-card, .category-title-container { color: black; background: white; }
         }
     </style>
-    <noscript>
-        <style>
-            .skills-tags { max-height: none; }
-            .category-title-container:disabled { cursor: default; }
-            .skills-toggle-btn { display: none; }
-        </style>
-    </noscript>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -404,7 +387,7 @@
         </div>
     </section>
 
-    <!-- ========== SKILLS & CERTIFICATIONS ========== -->
+    <!-- ========== CERTIFICATIONS ========== -->
     <section class="section" id="expertise">
         <h2 class="section-title">My Expertise</h2>
         <div class="expertise-container">
@@ -436,136 +419,6 @@
                     </div>
                 </div>
 
-                <!-- AI & Emerging Technologies Card -->
-                <div class="expertise-card">
-                    <div class="skills-category">
-                        <h3 class="category-title">
-                            <button type="button" class="category-title-container" disabled aria-expanded="true" aria-controls="ai-skills">
-                                <span>AI & Emerging Technologies</span>
-                                <span class="skills-toggle-btn" aria-hidden="true">+</span>
-                            </button>
-                        </h3>
-                        <div id="ai-skills" class="skills-tags">
-                            <span class="skill-tag">Artificial Intelligence</span>
-                            <span class="skill-tag">AI Agents & Orchestration</span>
-                            <span class="skill-tag">Model Context Protocol</span>
-                            <span class="skill-tag">Prompt Engineering</span>
-                            <span class="skill-tag">Context Engineering</span>
-                            <span class="skill-tag">Grounding</span>
-                            <span class="skill-tag">Retrieval-Augmented Generation</span>
-                            <span class="skill-tag">Conversational AI & NLP</span>
-                            <span class="skill-tag">Machine Learning</span>
-                            <span class="skill-tag">Predictive Analytics</span>
-                            <span class="skill-tag">Prescriptive Analytics</span>
-                            <span class="skill-tag">Diagnostic Analytics</span>
-                            <span class="skill-tag">Sentiment Analysis</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Salesforce Platform Card -->
-                <div class="expertise-card">
-                    <div class="skills-category">
-                        <h3 class="category-title">
-                            <button type="button" class="category-title-container" disabled aria-expanded="true" aria-controls="salesforce-skills">
-                                <span>Salesforce Platform</span>
-                                <span class="skills-toggle-btn" aria-hidden="true">+</span>
-                            </button>
-                        </h3>
-                        <div id="salesforce-skills" class="skills-tags">
-                            <span class="skill-tag">Salesforce Agentforce</span>
-                            <span class="skill-tag">Salesforce Sales Cloud</span>
-                            <span class="skill-tag">Salesforce CPQ</span>
-                            <span class="skill-tag">Salesforce Billing</span>
-                            <span class="skill-tag">Salesforce Field Service</span>
-                            <span class="skill-tag">Salesforce Service Cloud</span>
-                            <span class="skill-tag">Salesforce CRM Analytics</span>
-                            <span class="skill-tag">Salesforce Experience Cloud</span>
-                            <span class="skill-tag">System Administration</span>
-                            <span class="skill-tag">System Configuration</span>
-                            <span class="skill-tag">Certinia PSA</span>
-                            <span class="skill-tag">Certinia Services Estimator</span>
-                            <span class="skill-tag">Certinia Billing Central</span>
-                            <span class="skill-tag">Certinia Revenue Management</span>
-                            <span class="skill-tag">Certinia Accounting</span>
-                            <span class="skill-tag">Certinia OPI</span>
-                            <span class="skill-tag">Certinia Customer Success</span>
-                            <span class="skill-tag">Custom Objects & Fields</span>
-                            <span class="skill-tag">Flow Automations</span>
-                            <span class="skill-tag">User Management</span>
-                            <span class="skill-tag">Reports & Dashboards</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Technical & Development Card -->
-                <div class="expertise-card">
-                    <div class="skills-category">
-                        <h3 class="category-title">
-                            <button type="button" class="category-title-container" disabled aria-expanded="true" aria-controls="tech-skills">
-                                <span>Technical & Development</span>
-                                <span class="skills-toggle-btn" aria-hidden="true">+</span>
-                            </button>
-                        </h3>
-                        <div id="tech-skills" class="skills-tags">
-                            <span class="skill-tag">Software Development</span>
-                            <span class="skill-tag">API</span>
-                            <span class="skill-tag">Data Integration</span>
-                            <span class="skill-tag">Software Deployment</span>
-                            <span class="skill-tag">Product Development</span>
-                            <span class="skill-tag">User Interface Design</span>
-                            <span class="skill-tag">User Experience Design</span>
-                            <span class="skill-tag">Robotic Process Automation</span>
-                            <span class="skill-tag">Git & GitHub</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Data & Governance Card -->
-                <div class="expertise-card">
-                    <div class="skills-category">
-                        <h3 class="category-title">
-                            <button type="button" class="category-title-container" disabled aria-expanded="true" aria-controls="data-skills">
-                                <span>Data & Governance</span>
-                                <span class="skills-toggle-btn" aria-hidden="true">+</span>
-                            </button>
-                        </h3>
-                        <div id="data-skills" class="skills-tags">
-                            <span class="skill-tag">Data Governance</span>
-                            <span class="skill-tag">Data Privacy</span>
-                            <span class="skill-tag">Data Masking</span>
-                            <span class="skill-tag">Data Cleaning</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Business & Consulting Card -->
-                <div class="expertise-card">
-                    <div class="skills-category">
-                        <h3 class="category-title">
-                            <button type="button" class="category-title-container" disabled aria-expanded="true" aria-controls="business-skills">
-                                <span>Business & Consulting</span>
-                                <span class="skills-toggle-btn" aria-hidden="true">+</span>
-                            </button>
-                        </h3>
-                        <div id="business-skills" class="skills-tags">
-                            <span class="skill-tag">Professional Services Automation</span>
-                            <span class="skill-tag">Business Process</span>
-                            <span class="skill-tag">Solution Diagrams</span>
-                            <span class="skill-tag">Technology Adoption</span>
-                            <span class="skill-tag">Project Management Software</span>
-                            <span class="skill-tag">Demo Configuration & Delivery</span>
-                            <span class="skill-tag">Training Delivery</span>
-                            <span class="skill-tag">Implementation Scoping</span>
-                            <span class="skill-tag">Service Estimation</span>
-                            <span class="skill-tag">Proposal Creation & Walkthroughs</span>
-                            <span class="skill-tag">RFP Response</span>
-                            <span class="skill-tag">Vendor Collaboration</span>
-                            <span class="skill-tag">Waterfall & Agile Methodology</span>
-                            <span class="skill-tag">CI/CD</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -666,27 +519,6 @@
             description.classList.remove('expanded');
             button.setAttribute('aria-expanded', 'false');
             button.hidden = false;
-        });
-        // ========== SKILLS EXPAND/COLLAPSE FUNCTIONALITY ==========
-        document.querySelectorAll('.category-title-container').forEach(container => {
-            const content = document.getElementById(container.getAttribute('aria-controls'));
-            if (!content) return;
-
-            container.addEventListener('click', function () {
-                const content = document.getElementById(this.getAttribute('aria-controls'));
-                const button = this.querySelector('.skills-toggle-btn');
-                const isExpanded = this.getAttribute('aria-expanded') === 'true';
-
-                this.setAttribute('aria-expanded', !isExpanded);
-                content.classList.toggle('collapsed-panel');
-                if (button) {
-                    button.classList.toggle('expanded');
-                    button.textContent = isExpanded ? '+' : '−';
-                }
-            });
-            content.classList.add('collapsed-panel');
-            container.setAttribute('aria-expanded', 'false');
-            container.disabled = false;
         });
     </script>
 </body>
