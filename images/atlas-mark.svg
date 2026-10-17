@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Sean Docherty Atlas mark</title>
+  <desc id="desc">Three connected platform layers in ice blue on navy.</desc>
+  <rect width="512" height="512" rx="108" fill="#091d38"/>
+  <path d="M80 316 300 260 432 344 212 400Z" fill="#123451" stroke="#86b7e7" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M80 228 300 172 432 256 212 312Z" fill="#306ca6" stroke="#86b7e7" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M80 140 300 84 432 168 212 224Z" fill="#b7d9ff" stroke="#d8eaff" stroke-width="12" stroke-linejoin="round"/>
+</svg>
