@@ -1336,35 +1336,6 @@
     </section>
 
     <script>
-        // ========== SMOOTH SCROLL WITH OFFSET ==========
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const href = this.getAttribute('href');
-
-                // Allow normal behavior for external links or placeholder links
-                if (href === '#' || this.target === '_blank') {
-                    // For project links, let the default behavior (opening a new tab) happen
-                    if (this.classList.contains('project-link')) {
-                        return;
-                    }
-                    // For other placeholder links, do nothing
-                    if (href === '#') {
-                        return;
-                    }
-                }
-
-                const target = document.querySelector(href);
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop,
-                        behavior: 'auto'
-                    });
-                }
-            });
-        });
-
         // ========== SCROLL ANIMATIONS ==========
         const observerOptions = {
             threshold: 0.1,
